@@ -26,10 +26,6 @@
         case 'registration':
             include(ROOT . 'modules/login/registration.php');
         break;
-        //Обработка регистрации
-        case 'processing-registr':
-            include(ROOT . 'modules/login/processing-registr.php');
-        break;
         case 'login':
             include(ROOT . 'modules/login/login.php');
         break;
