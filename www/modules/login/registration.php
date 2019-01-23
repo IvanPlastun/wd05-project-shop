@@ -36,7 +36,7 @@
                 R::store($user);
 
                 //Записываем данные зарегистрированного пользователя в сессию
-                $_SESSION['logged-user'] = $user;
+                $_SESSION['logged_user'] = $user;
                 $_SESSION['login'] = 1;
                 $_SESSION['role'] = $user->role;
 

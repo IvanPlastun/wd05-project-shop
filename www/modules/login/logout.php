@@ -1,5 +1,5 @@
 <?php
-    unset($_SESSION['logged-user']);
+    unset($_SESSION['logged_user']);
     unset($_SESSION['login']);
     unset($_SESSION['role']);
     session_destroy();

@@ -21,7 +21,7 @@
                 $user = R::findOne('users', 'email=?', array($_POST['email']));
                 if($user) {
                     if(password_verify($_POST['password'], $user->password)) {
-                        $_SESSION['logged-user'] = $user;
+                        $_SESSION['logged_user'] = $user;
                         $_SESSION['login'] = 1;
                         $_SESSION['role'] = $user->role;
                         header('Location: ' . HOST);
