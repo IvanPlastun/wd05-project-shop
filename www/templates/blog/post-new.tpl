@@ -4,11 +4,6 @@
             <div class="add-post-content">
                 <h1 class="title-general mt-0 mb-10">Добавить пост</h1>
                 <?php include(ROOT . 'templates/_parts/_errors.tpl');?>
-                <?php
-                    echo "<pre>";
-                    print_r($_FILES);
-                    echo "</pre>";
-                ?>
                 <form enctype="multipart/form-data" method="POST" action="<?=HOST?>blog/post-new">
                     <div class="add-post-content__name mt-40">
                         <label class="label" for="add-post-name">Заголовок</label>
