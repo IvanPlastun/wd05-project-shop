@@ -51,7 +51,7 @@
                     //check file properties on different conditions
                     list($width, $height) = getimagesize($fileTmpLoc);
                     if($width < 10 || $height < 10) {
-                        $errors[] = ['title' => 'Файл не является изображением', 'description' => '<p>Загрузите файл изображения</p>'];
+                        $errors[] = ['title' => 'Файл имеет слишком маленький размер', 'description' => '<p>Загрузите изображение с большим разрешенеием</p>'];
                     }
 
                     //Проверка допустимого размера загружаемого файла
@@ -65,7 +65,7 @@
                     }
 
                     if($fileErrorMsg == 1) {
-                        $errors[] = ['title' => 'При загрузке изображения произошла ошибка'];
+                        $errors[] = ['title' => 'При загрузке изображения произошла ошибка.'];
                     }
 
                     //Проверяем установлен ли аватар у пользователя
@@ -138,10 +138,10 @@
     include(ROOT . 'templates/_parts/_footer.tpl');
 ?>
     <!-- build:jsLibs js/libs.js -->
-    <script src="<?HOST?>templates/assets/libs/jquery/jquery.min.js"></script><!-- endbuild -->
+    <script src="<?=HOST?>templates/assets/libs/jquery/jquery.min.js"></script><!-- endbuild -->
 	<!-- build:jsMain js/main.js -->
-	<script src="<?HOST?>templates/assets/js/main.js"></script>
-	<script src="<?HOST?>templates/assets/js/input-file.js"></script><!-- endbuild -->
+	<script src="<?=HOST?>templates/assets/js/main.js"></script>
+	<script src="<?=HOST?>templates/assets/js/input-file.js"></script><!-- endbuild -->
 	<script defer="defer" src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </body>
 </html>
