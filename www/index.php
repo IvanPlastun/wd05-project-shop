@@ -1,13 +1,15 @@
 <?php
     require('config.php');
     require('libs/rb-mysql.php');
+    require('libs/functions.php');
     require('db.php');
-
+    $errors = array();
+    $success = array();
+    session_start();
 
     /* ************************************************************
 
     * РОУТЕР
-
     ************************************************************* */
 
     $uri = $_SERVER['REQUEST_URI'];
@@ -21,15 +23,23 @@
         case '':
             include(ROOT . 'modules/main/index.php');
         break;
-        case 'about':
-            include(ROOT . 'modules/about/index.php');
+        case 'registration':
+            include(ROOT . 'modules/login/registration.php');
         break;
-        case 'blog':
-            include(ROOT . 'modules/blog/index.php');
+        case 'login':
+            include(ROOT . 'modules/login/login.php');
         break;
-        case 'contacts':
-            include(ROOT . 'modules/contacts/index.php');
+        case 'logout':
+            include(ROOT . 'modules/login/logout.php');
         break;
+        case 'lost-password':
+            include(ROOT . 'modules/login/lost-password.php');
+        break;
+        case 'set-new-password':
+            include(ROOT . 'modules/login/set-new-password.php');
+        break;
+
+
         default:
             include(ROOT . 'modules/main/index.php');
         break;

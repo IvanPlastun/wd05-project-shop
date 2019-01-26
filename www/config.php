@@ -6,6 +6,11 @@
     define('DB_USER', 'root');
     define('DB_PASSWORD', '');
 
+    //Настройки сайта для email
+    define('SITE_NAME', 'Личный сайт - Ивана Пластун');
+    define('SITE_EMAIL', 'info@webdev05.com');
+    define('ADMIN_EMAIL', 'info@mail.com');
+
 
     //Устанавливаем путь для хоста по протоколу HTTP
     define("HOST", "http://{$_SERVER['HTTP_HOST']}/");
