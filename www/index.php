@@ -44,6 +44,19 @@
         case 'profile-edit':
             include(ROOT . 'modules/profile/edit.php');
         break;
+
+        // :::::::::::::::::::: BLOG ::::::::::::::::::::::::::
+        case 'blog':
+            include(ROOT . 'modules/blog/index.php');
+        break;
+        case 'blog/post-new':
+            include(ROOT . 'modules/blog/post-new.php');
+        break;
+        case 'blog/post':
+            include(ROOT . 'modules/blog/post.php');
+        break;
+
+
         default:
             include(ROOT . 'modules/main/index.php');
         break;
