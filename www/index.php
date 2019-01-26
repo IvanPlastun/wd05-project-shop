@@ -38,8 +38,12 @@
         case 'set-new-password':
             include(ROOT . 'modules/login/set-new-password.php');
         break;
-
-
+        case 'profile':
+            include(ROOT . 'modules/profile/index.php');
+        break;
+        case 'profile-edit':
+            include(ROOT . 'modules/profile/edit.php');
+        break;
         default:
             include(ROOT . 'modules/main/index.php');
         break;
