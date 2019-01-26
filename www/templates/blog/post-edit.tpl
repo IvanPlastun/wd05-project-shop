@@ -32,9 +32,8 @@
                         </section>
                     </div>
                     <div class="add-post-content__main mt-30">
-                        <label class="label" for="editPostText">Содержание</label>
-                            <textarea class="textarea input-post-content" name="post-text" id="editPostText" placeholder="Введите текст поста"><?=$post['text']?></textarea>
-                        </div>
+                        <textarea class="textarea input-post-content" name="post-text" id="editPostText" placeholder="Введите текст поста"><?=$post['text']?></textarea>
+                    </div>
                     <div class="add-post-content__submit mt-30">
                         <input class="button button-save mr-20" type="submit" name="update-post" value="Обновить" />
                         <a class="button" href="<?=HOST?>blog">Отмена</a>
