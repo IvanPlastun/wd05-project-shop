@@ -94,5 +94,5 @@ $(document).ready(function() {
 		formValidation.init();
 	})();*/
 
-
+	$('[data-notify-hide]').delay(2000).slideUp(500);
 });
