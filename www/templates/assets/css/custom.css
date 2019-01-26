@@ -44,3 +44,18 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.5;
     font-weight: 700;
 }
+
+.link {
+    -webkit-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+
+.link:hover {
+    color: #0094eb;
+    text-decoration: none;
+}
+
+.link:active {
+    color: #0069a7;
+}
