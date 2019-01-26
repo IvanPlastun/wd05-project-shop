@@ -2,13 +2,30 @@
     <div class="row">
         <div class="col-10 offset-1">
             <div class="post">
+                <?php
+                    if(isset($_GET['result'])) {
+                        include(ROOT . 'templates/blog/_results.tpl');
+                    }
+                ?>
                 <div class="post-head">
-                    <h1 class="title-general mb-0 mt-0 title--width"><?=$post['title']?></h1><a class="button button-edit post-head--position" href="#">Редактировать</a>
+                    <h1 class="title-general mb-0 mt-0"><?=$post['title']?></h1>
+                    <?php if(isAdmin()) { ?>
+                        <div class="post-head-buttons">
+                            <a class="button button-edit mr-20" href="<?=HOST?>blog/post-edit?id=<?=$post['id']?>">Редактировать</a>
+                            <a class="button button-delete" href="<?=HOST?>blog/post-delete?id=<?=$post['id']?>">Удалить</a>
+                        </div>
+                    <?php } ?>
                 </div>
                 <div class="post-info">
-                    <div class="post-info__author">Емельян Казаков</div>
-                    <div class="post-info__topic"><a class="postlink" href="#">Путешествия</a></div>
-                    <div class="post-info__date"><?=rus_date('j F Y H:i', strtotime($post['data_time']))?></div>
+                    <div class="post-info__author"><?=$post['name']?> <?=$post['lastname']?></div>
+                    <div class="post-info__topic"><span><?=$post['category_name']?></span></div>
+                    <div class="post-info__date">
+                        <?php if(isset($post['update_time']) || isset($_GET['result']))
+                            echo rus_date('j F Y H:i', strtotime($post['update_time']));
+                        else 
+                            echo rus_date('j F Y H:i', strtotime($post['data_time']));
+                        ?>
+                    </div>
                     <div class="post-info__comments"><a class="postlink" href="#">2 комментария</a></div>
                 </div>
                 <?php if($post['post_img'] != '' && $post['post_img_small'] != '') { ?>

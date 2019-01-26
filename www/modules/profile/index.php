@@ -1,4 +1,9 @@
 <?php
+    if(!isLoggedIn()) { 
+        header('Location: ' . HOST);
+        die();
+    }
+
     $title = 'Профиль пользователя';
 
     $currentUser = $_SESSION['logged_user'];
@@ -15,5 +20,4 @@
     include(ROOT . 'templates/template.tpl');
     include(ROOT . 'templates/_parts/_footer.tpl');
     include(ROOT . 'templates/_parts/_foot.tpl');
-
 ?>

@@ -1,4 +1,10 @@
 <?php
+
+    if(!isAdmin()) { 
+        header('Location: ' . HOST);
+        die();
+    }
+
     $title = 'Категории - удалить категорию';
     $category = R::load('categories', $_GET['id']);
 

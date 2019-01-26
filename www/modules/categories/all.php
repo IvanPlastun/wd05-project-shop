@@ -1,6 +1,10 @@
 <?php
-    $title = 'Категории';
+    if(!isAdmin()) { 
+        header('Location: ' . HOST);
+        die();
+    }
 
+    $title = 'Категории';
     $categories = R::find('categories', 'ORDER BY category_name ASC');
 
     //Подготавливаем контент для центральной части

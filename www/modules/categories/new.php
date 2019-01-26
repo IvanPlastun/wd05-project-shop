@@ -1,4 +1,8 @@
 <?php
+    if(!isAdmin()) { 
+        header('Location: ' . HOST);
+        die();
+    }
     $title = 'Категории - добавить категорию';
 
     if(!empty($_POST)) {
