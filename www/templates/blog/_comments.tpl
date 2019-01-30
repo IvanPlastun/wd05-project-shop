@@ -4,11 +4,13 @@
         <?php foreach($comments as $comment) { ?>
             <div class="user-comment">
                 <div class="user-comment__avatar">
-                    <?php if($comment['avatar_small'] != '') { ?>
                         <div class="avatar avatar--small">
+                        <?php if($comment['avatar_small'] != '' && file_exists(ROOT . 'usercontent/avatar/' . $comment['avatar_small'])) { ?>
                             <img src="<?=HOST?>usercontent/avatar/<?=$comment['avatar_small']?>" alt="<?=$comment['name']?> <?=$comment['lastname']?>"/>
+                        <?php } else { ?>
+                            <img src="<?=HOST?>templates/assets/img/avatars/user.png?>" alt="<?=$comment['name']?> <?=$comment['lastname']?>"/>
+                        <?php } ?>
                         </div>
-                    <?php } ?>
                 </div>
                 <div class="user-comment-info-wrapper">
                     <span class="user-comment__name"><?=$comment['name']?> <?=$comment['lastname']?></span>

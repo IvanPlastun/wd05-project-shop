@@ -2,9 +2,11 @@
     <div class="user-block__wrapper">
         <div class="row user-group">
             <div class="avatar avatar--small">
-                <?php if($_SESSION['logged_user']['avatar_small'] != ''): ?>
+                <?php if($_SESSION['logged_user']['avatar_small'] != '' && file_exists(ROOT . 'usercontent/avatar/' . $_SESSION['logged_user']['avatar_small'])) { ?>
                     <img src="<?=HOST?>usercontent/avatar/<?=$_SESSION['logged_user']['avatar_small']?>" alt="<?=$_SESSION['logged_user']['name']?> <?=$_SESSION['logged_user']['lastname']?>" />
-                <?php endif?>
+                <?php } else { ?>
+                    <img src="<?=HOST?>templates/assets/img/avatars/user.png" alt="<?=$_SESSION['logged_user']['name']?> <?=$_SESSION['logged_user']['lastname']?>"/>
+                <?php }?>
             </div>
             <div class="user-name">
                 <span><?=$_SESSION['logged_user']['name']?> <?=$_SESSION['logged_user']['lastname']?></span>
