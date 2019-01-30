@@ -32,7 +32,7 @@
                         </div>
                     <?php } ?>
                 </div>
-                <?php if($post['post_img'] != '' && $post['post_img_small'] != '') { ?>
+                <?php if($post['post_img'] != '' && $post['post_img_small'] != '' && file_exists(ROOT . 'usercontent/blog/' . $post['post_img']) && file_exists(ROOT . 'usercontent/blog/' . $post['post_img_small'])) { ?>
                     <div class="post-img">
                         <img src="<?=HOST?>usercontent/blog/<?=$post['post_img']?>" alt="Горы"/>
                     </div>
