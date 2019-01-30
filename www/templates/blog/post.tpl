@@ -11,7 +11,7 @@
                     <div class="post-info__date"><?=rus_date('j F Y H:i', strtotime($post['data_time']))?></div>
                     <div class="post-info__comments"><a class="postlink" href="#">2 комментария</a></div>
                 </div>
-                <?php if($post['post_img'] != '' && $post['post_img_small'] != '') { ?>
+                <?php if($post['post_img'] != '' && $post['post_img_small'] != '' && file_exists(ROOT . 'usercontent/blog/' . $post['post_img']) && file_exists(ROOT . 'usercontent/blog/' . $post['post_img_small'])) { ?>
                     <div class="post-img">
                         <img src="<?=HOST?>usercontent/blog/<?=$post['post_img']?>" alt="Горы"/>
                     </div>

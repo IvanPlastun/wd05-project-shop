@@ -7,7 +7,7 @@
             <div class="col-auto pl-0 pr-0 col--margin">
                 <div class="card-box">
                     <div class="card-box__img-blog">
-                        <?php if($post->post_img_small != '') { ?>
+                        <?php if($post->post_img_small != '' && file_exists(ROOT . 'usercontent/blog/' . $post->post_img_small)) { ?>
                             <img src="<?=HOST?>usercontent/blog/<?=$post['post_img_small']?>" alt="<?=$post['title']?>" />
                         <?php } else { ?>
                             <img src="<?=HOST?>usercontent/no-image.jpg?>" alt="<?=$post['title']?>" />

@@ -9,9 +9,11 @@
                 <div class="user-profile-information mb-35 mt-40">
                     <div class="user-profile__avatar">
                         <div class="avatar">
-                            <?php if($currentUser->avatar != ''): ?>
+                            <?php if($currentUser->avatar != '' && file_exists(ROOT . 'usercontent/avatar/' . $_SESSION['logged_user']['avatar'])) { ?>
                                 <img src="<?=HOST?>usercontent/avatar/<?=$currentUser->avatar?>" alt="<?=$currentUser->name?> <?=$currentUser->lastname?>"/>
-                            <?php endif ?>
+                            <?php } else { ?>
+                                <img src="<?=HOST?>templates/assets/img/avatars/user.png" alt="<?=$currentUser->name?> <?=$currentUser->lastname?>"/>
+                            <?php } ?>
                         </div>
                     </div>
                     <div class="user-profile__description">
