@@ -18,7 +18,9 @@
                 </div>
                 <div class="post-info">
                     <div class="post-info__author"><?=$post['name']?> <?=$post['lastname']?></div>
-                    <div class="post-info__topic"><span><?=$post['category_name']?></span></div>
+                    <?php if($post['category_name'] != ''): ?>
+                        <div class="post-info__topic"><span><?=$post['category_name']?></span></div>
+                    <?php endif ?>
                     <div class="post-info__date">
                         <?php if(isset($post['update_time']) || isset($_GET['result']))
                             echo rus_date('j F Y H:i', strtotime($post['update_time']));
