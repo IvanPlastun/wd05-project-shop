@@ -21,15 +21,15 @@
                 $errors[] = ['title' => 'Введите содержание поста'];
             }
 
-            if(!isset($_POST['post-categories']) || $_POST['post-categories'] == '') {
+            /*if(!isset($_POST['post-categories']) || $_POST['post-categories'] == '') {
                 $errors[] = ['title' => 'Выберите категорию'];
-            }
+            }*/
 
             if(empty($errors)) {
                 $post = R::dispense('posts');
                 $post->title = htmlentities($_POST['post-title']);
                 $post->text = $_POST['post-text'];
-                $post->category = htmlentities($_POST['post-categories']);
+                //$post->category = htmlentities($_POST['post-categories']);
                 $post->dataTime = R::isoDateTime();
                 $post->authorId = $_SESSION['logged_user']['id'];
 
