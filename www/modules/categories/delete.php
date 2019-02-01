@@ -1,10 +1,27 @@
 <?php
+
+    if(!isAdmin()) { 
+        header('Location: ' . HOST);
+        die();
+    }
+
     $title = 'Категории - удалить категорию';
     $category = R::load('categories', $_GET['id']);
+
+
+    //Код удаляет id-категории из таблицы posts
+    $posts = R::find('posts');
 
     if(!empty($_POST)) {
         if(isset($_POST['cat-delete'])) {
             R::trash($category);
+            foreach($posts as $post) {
+                $postEditCategory = R::load('posts', $post['id']);
+                if($postEditCategory->category == $_GET['id']) {
+                    $postEditCategory->category = NULL;
+                    R::store($postEditCategory);
+                }
+            }
             header('Location: ' . HOST . 'blog/categories?result=catDeleted');
             exit();
         }

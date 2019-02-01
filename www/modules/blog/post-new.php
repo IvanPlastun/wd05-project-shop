@@ -1,6 +1,14 @@
 <?php
+    if(!isAdmin()) { 
+        header('Location: ' . HOST);
+        die();
+    }
 
     $title = 'Блог - добавить пост';
+
+    ///Получаем категории из базы данных
+    $categories = R::find('categories', 'ORDER BY category_name ASC');
+
 
     if(!empty($_POST)) {
         if(isset($_POST['add-post'])) {
@@ -13,10 +21,15 @@
                 $errors[] = ['title' => 'Введите содержание поста'];
             }
 
+            /*if(!isset($_POST['post-categories']) || $_POST['post-categories'] == '') {
+                $errors[] = ['title' => 'Выберите категорию'];
+            }*/
+
             if(empty($errors)) {
                 $post = R::dispense('posts');
                 $post->title = htmlentities($_POST['post-title']);
                 $post->text = $_POST['post-text'];
+                //$post->category = htmlentities($_POST['post-categories']);
                 $post->dataTime = R::isoDateTime();
                 $post->authorId = $_SESSION['logged_user']['id'];
 
@@ -80,7 +93,7 @@
                 }
 
                 R::store($post);
-                header('Location: ' . HOST . 'blog');
+                header('Location: ' . HOST . 'blog?result=postCreated');
                 exit();
             }
         }
@@ -98,13 +111,5 @@
     include(ROOT . 'templates/_parts/_head.tpl');
     include(ROOT . 'templates/template.tpl');
     include(ROOT . 'templates/_parts/_footer.tpl');
+    include(ROOT . 'templates/_parts/_foot-edit.tpl');
 ?>
-
-    <!-- build:jsLibs js/libs.js -->
-    <script src="<?=HOST?>templates/assets/libs/jquery/jquery.min.js"></script><!-- endbuild -->
-	<!-- build:jsMain js/main.js -->
-	<script src="<?=HOST?>templates/assets/js/main.js"></script>
-	<script src="<?=HOST?>templates/assets/js/input-file.js"></script><!-- endbuild -->
-	<script defer="defer" src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-</body>
-</html>
