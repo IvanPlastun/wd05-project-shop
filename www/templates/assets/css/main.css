@@ -1511,6 +1511,8 @@ nav.footer__nav a:last-child {
 }
 .message-info-files {
   color: #000;
+  display: inline-block;
+  margin-top: 25px;
 }
 .message-user-info__email {
   color: #037EC6;
@@ -1529,7 +1531,7 @@ nav.footer__nav a:last-child {
   color: #0094eb;
 }
 .message-user__text {
-  margin: 20px 0 25px 0 !important;
+  margin: 20px 0 0px 0 !important;
   line-height: 1.5 !important;
 }
 .post-img {

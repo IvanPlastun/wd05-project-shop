@@ -76,6 +76,17 @@
             include(ROOT . 'modules/categories/delete.php');
         break;
 
+        // :::::::::::::::::::: CONTACTS ::::::::::::::::::::::
+        case 'contacts':
+            include(ROOT . 'modules/contacts/index.php');
+        break;
+        case 'contacts-edit':
+            include(ROOT . 'modules/contacts/edit.php');
+        break;
+        case 'contacts-messages':
+            include(ROOT . 'modules/contacts/messages.php');
+        break;
+
 
         default:
             include(ROOT . 'modules/main/index.php');

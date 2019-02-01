@@ -69,7 +69,7 @@
                     $moveResult = move_uploaded_file($fileTmpLoc, $uploadFile);
 
                     if($moveResult != true) {
-                        $errors[] = ['title' => 'Ошибка сохранения файла'];
+                        $errors[] = ['title' => 'Ошибка сохранения файла.'];
                     }
 
                     include_once(ROOT . 'libs/image_resize_imagick.php');
