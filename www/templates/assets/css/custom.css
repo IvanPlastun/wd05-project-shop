@@ -1,3 +1,7 @@
+.notification {
+    margin-bottom: 10px;
+}
+
 .nav__link--active {
     text-decoration: none !important;
 }
@@ -91,3 +95,67 @@ h1, h2, h3, h4, h5, h6 {
 .circle-default--yellow {
     stroke: rgba(255, 204, 0, 0.2);
 }  
+
+
+
+.separate-work-description h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.separate-work-description p:nth-last-child(-n+3) {
+    font-weight: 700;
+    margin-top: 1em;
+}
+
+.separate-work-result h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.separate-work-result p:last-child {
+    margin-bottom: 0;
+}
+
+.separate-work-technologies h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.separate-work-technologies ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.separate-work-technologies ul li {
+    line-height: 1;
+    margin-bottom: 1.25em;
+}
+
+.separate-work-technologies ul li::before { 
+    display: inline-block;
+    content: "•";
+    margin-right: 5px;
+}
+
+.separate-work-technologies ul li:last-child {
+    margin-bottom: 0;
+}
+
+.work-box {
+    margin-right: 30px;
+    margin-bottom: 50px;
+}
+
+.work-box:nth-child(3n) {
+    margin-right: 0;
+}
+
+.work-box:nth-last-child(-n+3) {
+    margin-bottom: 0px;
+}
+
+
+

@@ -5,7 +5,6 @@
             include(ROOT . 'templates/_parts/_admin-panel.tpl');
         }
     }
-    
 ?>
 <header class="header">
     <div class="row header__wrapper header__wrapper--user">

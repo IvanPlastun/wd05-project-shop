@@ -86,7 +86,7 @@
         case 'contacts-messages':
             include(ROOT . 'modules/contacts/messages.php');
         break;
-        // :::::::::::::::::::: CONTACTS ::::::::::::::::::::::
+        // :::::::::::::::::::: ABOUT ::::::::::::::::::::::
         case 'about':
             include(ROOT . 'modules/about/index.php');
         break;
@@ -98,6 +98,20 @@
         break;
         case 'about-edit-jobs':
             include(ROOT . 'modules/about/edit-jobs.php');
+        break;
+
+        // :::::::::::::::::::: PORTFOLIO ::::::::::::::::::::::
+        case 'portfolio':
+            include(ROOT . 'modules/portfolio/index.php');
+        break;
+        case 'portfolio-new': 
+            include(ROOT . 'modules/portfolio/new.php');
+        break;
+        case 'portfolio-edit': 
+            include(ROOT . 'modules/portfolio/edit.php');
+        break;
+        case 'portfolio-single-work': 
+            include(ROOT . 'modules/portfolio/single.php');
         break;
 
         default:
