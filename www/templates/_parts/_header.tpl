@@ -20,7 +20,6 @@
                 //Нет пользователя
                 include(ROOT . 'templates/_parts/_header-user-login-links.tpl');
             }
-        
         ?>
     </div>
     <div class="row">

@@ -86,7 +86,19 @@
         case 'contacts-messages':
             include(ROOT . 'modules/contacts/messages.php');
         break;
-
+        // :::::::::::::::::::: CONTACTS ::::::::::::::::::::::
+        case 'about':
+            include(ROOT . 'modules/about/index.php');
+        break;
+        case 'about-edit':
+            include(ROOT . 'modules/about/edit.php');
+        break;
+        case 'about-edit-skills':
+            include(ROOT . 'modules/about/edit-skills.php');
+        break;
+        case 'about-edit-jobs':
+            include(ROOT . 'modules/about/edit-jobs.php');
+        break;
 
         default:
             include(ROOT . 'modules/main/index.php');
