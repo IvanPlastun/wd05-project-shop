@@ -83,7 +83,6 @@ h1, h2, h3, h4, h5, h6 {
 .workflow-block:last-child {
     margin-bottom: 0;
 }
-
 .circle-default--green {
     stroke: rgba(58, 170, 53, 0.2);
 }
@@ -95,8 +94,6 @@ h1, h2, h3, h4, h5, h6 {
 .circle-default--yellow {
     stroke: rgba(255, 204, 0, 0.2);
 }  
-
-
 
 .separate-work-description h3 {
     font-size: 24px;
@@ -158,4 +155,29 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+.about-me__description p {
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+.about-me__description h3 {
+    font-size: 24px;
+    margin-top: 30px;
+}
+
+
+p.label {
+    margin-bottom: 10px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 25px;
+    margin-bottom: 5px;
+}
+
+.post-content h1:first-child,
+h2:first-child, h3:first-child, h4:first-child,
+h5:first-child, h6:first-child {
+    margin-top: 0;
+}
 

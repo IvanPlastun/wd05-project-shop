@@ -7,6 +7,12 @@
     $title = 'Профиль пользователя';
 
     $currentUser = $_SESSION['logged_user'];
+
+    $sqlComments = "SELECT comments.date_time, comments.text, posts.id, posts.title
+    FROM `comments` INNER JOIN posts ON posts.id = comments.post_id
+    WHERE comments.user_id =" . $_SESSION['logged_user']['id'] . " ORDER BY date_time DESC LIMIT 3";
+
+    $comments = R::getAll($sqlComments);
     
     //Подготавливаем контент для центральной части
     ob_start();
