@@ -63,7 +63,7 @@
                         <div class="separate-work-result"><?=$work['result']?></div>
                     </div>
                     <div class="col-5">
-                        <div class="separate-work-technologies"><?=$work['technologes']?></div>
+                        <div class="separate-work-technologies mb-25"><?=$work['technologes']?></div>
                         <div class="separate-work-link-project mb-35">
                             <h3 class="title-3 mb-20 mt-25 strong">Ссылка на проект</h3>
                             <a class="separate-work-link-project__link" href="<?=$work['linkproject']?>" target="_blank"><?=$work['linkproject']?></a>

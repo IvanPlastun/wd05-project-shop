@@ -7,7 +7,7 @@
                 <?php endif ?>
             </div>
             <div class="about-me__description col-md-9">
-                <h3 class="title-1 title-1--blue title-1--weight"><?=$about['firstname']?> <?=$about['lastname']?></h3>
+                <h2 class="title-1 title-1--blue title-1--weight"><?=$about['firstname']?> <?=$about['lastname']?></h2>
                 <?=$about['aboutinfo']?>
                 <div class="about-me__button"><a class="button" href="<?=HOST?>about">Подробнее</a></div>
             </div>
