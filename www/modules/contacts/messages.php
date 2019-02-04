@@ -20,8 +20,7 @@
                 if(file_exists($fileImgurl)) {unlink($fileImgurl);}
             }
             R::trash($messageForDelete);
-            header('Location: ' . HOST . 'contacts');
-            exit();
+            $messages = R::find('messages', 'ORDER BY id DESC');
         }
     }
 
