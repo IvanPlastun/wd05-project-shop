@@ -10,8 +10,6 @@
     $work = R::getAll($sqlWorks);
     $work = $work[0];
 
-    $works = R::find('portfolio', 'ORDER BY id DESC');
-
     ob_start();
     include(ROOT . 'templates/_parts/_header-admin.tpl');
     include(ROOT . 'templates/portfolio/single.tpl');
