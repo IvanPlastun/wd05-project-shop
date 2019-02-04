@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 03 2019 г., 19:25
+-- Время создания: Фев 04 2019 г., 13:00
 -- Версия сервера: 5.7.23
 -- Версия PHP: 7.0.32
 
@@ -41,7 +41,7 @@ CREATE TABLE `about` (
 --
 
 INSERT INTO `about` (`id`, `firstname`, `lastname`, `aboutinfo`, `photo`) VALUES
-(1, 'Емельян', 'Казаков', '<p>Я веб разработчик из Казани. Мне 26 лет.</p>\r\n\r\n<p>Занимаюсь разработкой современных сайтов и приложенийю Мне нравится делать интересные и современные проекты.</p>\r\n\r\n<p>Этот сайт я сделал в рамкаобучения в школе онлайн обучения WebCademy. Чуть позже освежу в нем свой контент. А пока посмотрите, как тут все классно и красиво!</p>\r\n\r\n<h3>Что я умею</h3>\r\n\r\n<p>Меня привлекает Frontend разработка, это не только моя работа, но и хобби. Также знаком и могу решать несложные задачи на Backend. Знаком и использую современный workflow, работаю с репозиториями git и сборкой проекта на gulp.</p>\r\n', '6069366455.jpg');
+(1, 'Иван', 'Пластун', '<p>Я веб разработчик из Казани. Мне 26 лет.</p>\r\n\r\n<p>Занимаюсь разработкой современных сайтов и приложенийю Мне нравится делать интересные и современные проекты.</p>\r\n\r\n<p>Этот сайт я сделал в рамкаобучения в школе онлайн обучения WebCademy. Чуть позже освежу в нем свой контент. А пока посмотрите, как тут все классно и красиво!</p>\r\n\r\n<h3>Что я умею</h3>\r\n\r\n<p>Меня привлекает Frontend разработка, это не только моя работа, но и хобби. Также знаком и могу решать несложные задачи на Backend. Знаком и использую современный workflow, работаю с репозиториями git и сборкой проекта на gulp.</p>\r\n', '8251251220.jpg');
 
 -- --------------------------------------------------------
 
@@ -117,7 +117,7 @@ CREATE TABLE `contacts` (
 --
 
 INSERT INTO `contacts` (`id`, `firstname`, `lastname`, `email`, `phone`, `address`, `skype`, `vkontakte`, `facebook`, `github`, `twitter`) VALUES
-(1, 'Емельян', 'Казаков', 'info@mail.com', '+7-957-145-32', 'Россия, Санкт-Петербург', 'myskype', 'https://vk.com/id127490572', '', 'https://github.com/IvanPlastun', 'https://twitter.com/login?lang=ru');
+(1, 'Иван', 'Пластун', 'plastun.vanya@yandex.ru', '+7-900-227-73-50', 'Россия, Санкт-Петербург', '', 'https://vk.com/id127490572', '', 'https://github.com/IvanPlastun', '');
 
 -- --------------------------------------------------------
 
@@ -244,7 +244,7 @@ CREATE TABLE `skills` (
 --
 
 INSERT INTO `skills` (`id`, `html`, `css`, `js`, `jquery`, `php`, `mysql`, `git`, `gulp`, `npm`, `yarn`) VALUES
-(1, 100, 90, 60, 70, 60, 50, 75, 65, 33, 0);
+(1, 100, 90, 60, 60, 50, 50, 70, 65, 50, 20);
 
 -- --------------------------------------------------------
 
@@ -272,7 +272,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `role`, `recovery_code`, `recovery_code_times`, `name`, `lastname`, `country`, `city`, `avatar`, `avatar_small`) VALUES
-(1, 'info@mail.com', '$2y$10$.rWOiBudAASbMbaGDJRONujrAG6vCrN.2kVKinFp4ORLXtxG9yokW', 'admin', '7BvJCjy5Utqz0Hf', 3, 'Емельян', 'Казаков', 'Россия', 'Казань', '278884887.jpg', '48-278884887.jpg'),
+(1, 'plastun.vanya@yandex.ru', '$2y$10$.rWOiBudAASbMbaGDJRONujrAG6vCrN.2kVKinFp4ORLXtxG9yokW', 'admin', '7BvJCjy5Utqz0Hf', 3, 'Иван', 'Пластун', 'Россия', 'Санкт-Петербург', '222744750.jpg', '48-222744750.jpg'),
 (14, 'sylvia@gmail.com', '$2y$10$s3TbjMx8oy5ZCWa1ymkbnean9.SFDxa92JgfbR9rqcH6d8y05FVpG', 'user', NULL, NULL, 'Сильвия', 'Ливенхайм', 'Япония', 'Токио', '861407470.jpg', '48-861407470.jpg'),
 (15, 'info432@mail.com', '$2y$10$c011FihZR.DdhFWeNeEdjOlw/r0As1HUwyfu8YDtJSdVwjpZ./4Sa', 'user', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
