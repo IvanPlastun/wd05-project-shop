@@ -9,14 +9,18 @@
     <?php endif ?>
         <div class="col-5">
             <h1 class="title-general mb-30">Контакты</h1>
-            <?php showContactInfo('Имя', 'firstname');?>
-            <?php showContactInfo('Фамилия', 'lastname');?>
-            <?php showContactInfo('Email', 'email', 'link');?>
-            <?php showContactInfo('Github', 'github', 'link');?>
-            <?php showContactInfo('Skype', 'skype', 'link');?>
-            <?php showContactInfo('Социальные сети', $socialNetworks, 'social');?>
-            <?php showContactInfo('Телефон', 'phone');?>
-            <?php showContactInfo('Адрес', 'address');?>
+            <?php ($contacts['firstname'] != '' || $contacts['firstname'] != NULL) ? showContactInfo('Имя', 'firstname') : '';?>
+            <?php ($contacts['lastname'] != '' || $contacts['lastname'] != NULL) ? showContactInfo('Фамилия', 'lastname') : '';?>
+            <?php ($contacts['email'] != '' || $contacts['email'] != NULL) ? showContactInfo('Email', 'email', 'link') : '';?>
+            <?php ($contacts['github'] != '' || $contacts['github'] != NULL) ? showContactInfo('Github', 'github', 'link') : '';?>
+            <?php ($contacts['skype'] != '' || $contacts['skype'] != NULL) ? showContactInfo('Skype', 'skype', 'link') : '';?>
+            <?php 
+                foreach($socialNetworks as $network) { 
+                    ($contacts[$network] != '' || $contacts[$network] != NULL) ? showContactInfo('Социальные сети', $socialNetworks, 'social') : '';
+                }
+            ?>
+            <?php ($contacts['address'] != '' || $contacts['address'] != NULL) ? showContactInfo('Телефон', 'phone') : '';?>
+            <?php ($contacts['address'] != '' || $contacts['address'] != NULL) ? showContactInfo('Адрес', 'address') : '';?>
         </div>
         <div class="col-4 offset-1">
             <div class="title-general mb-40">Связаться со мной</div>

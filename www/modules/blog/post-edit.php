@@ -31,8 +31,6 @@
         }
     }
 
-
-
     if(!empty($_POST)) {
         if(isset($_POST['update-post'])) {
             if(trim($_POST['post-title']) == '') {
@@ -118,10 +116,11 @@
                     $img->writeImage($resized_file);
                     $post->postImgSmall = '320-' . $db_file_name;
                 }
-
-                R::store($post);
-                header('Location: ' . HOST . 'blog/post?result=postUpdated&id=' . $post['id']);
-                exit();
+                if(empty($errors)) { 
+                    R::store($post);
+                    header('Location: ' . HOST . 'blog/post?result=postUpdated&id=' . $post['id']);
+                    exit();
+                }
             }
         }
     }

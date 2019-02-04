@@ -78,7 +78,9 @@
             <div class="separate-work-pagination-wrapper mt-45">
                 <div class="row">
                     <div class="col-10 offset-1">
-                        <div class="separate-work-pagination"><a class="button button-previous button-work-pagination-prev" href="#">Все работы <span class="button__icon button__icon--mright float-left"><i class="mr-0 fas fa-arrow-left"></i></span></a><a class="button button-next button-work-pagination-next" href="#">Следующая работа <span class="button__icon"><i class="mr-0 fas fa-arrow-right"></i></span></a></div>
+                        <div class="separate-work-pagination">
+                            <a class="button button-previous button-work-pagination-prev" href="<?=HOST?>portfolio">Все работы <span class="button__icon button__icon--mright float-left"><i class="mr-0 fas fa-arrow-left"></i></span></a>
+                            <a class="button button-next button-work-pagination-next" href="#">Следующая работа <span class="button__icon"><i class="mr-0 fas fa-arrow-right"></i></span></a></div>
                     </div>
                 </div>
             </div>

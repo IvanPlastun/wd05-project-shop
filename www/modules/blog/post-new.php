@@ -91,10 +91,11 @@
                     $img->writeImage($resized_file);
                     $post->postImgSmall = '320-' . $db_file_name;
                 }
-
-                R::store($post);
-                header('Location: ' . HOST . 'blog?result=postCreated');
-                exit();
+                if(empty($errors)) {
+                    R::store($post);
+                    header('Location: ' . HOST . 'blog?result=postCreated');
+                    exit();
+                }
             }
         }
     }

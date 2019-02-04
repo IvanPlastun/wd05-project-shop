@@ -60,9 +60,10 @@
                     $messages->message_file_name_original = $fileName;
                     $messages->message_file = $db_file_name;
                 }
-
-                R::store($messages);
-                $success[] = ['title' => 'Сообщение было успешно отправлено!'];
+                if(empty($errors)) {
+                    R::store($messages);
+                    $success[] = ['title' => 'Сообщение было успешно отправлено!'];
+                }
             }
         }
     }
