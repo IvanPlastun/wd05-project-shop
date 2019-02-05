@@ -52,6 +52,12 @@
         case 'blog/post-new':
             include(ROOT . 'modules/blog/post-new.php');
         break;
+        case 'blog/post-edit':
+            include(ROOT . 'modules/blog/post-edit.php');
+        break;
+        case 'blog/post-delete':
+            include(ROOT . 'modules/blog/post-delete.php');
+        break;
         case 'blog/post':
             include(ROOT . 'modules/blog/post.php');
         break;
@@ -70,6 +76,43 @@
             include(ROOT . 'modules/categories/delete.php');
         break;
 
+        // :::::::::::::::::::: CONTACTS ::::::::::::::::::::::
+        case 'contacts':
+            include(ROOT . 'modules/contacts/index.php');
+        break;
+        case 'contacts-edit':
+            include(ROOT . 'modules/contacts/edit.php');
+        break;
+        case 'contacts-messages':
+            include(ROOT . 'modules/contacts/messages.php');
+        break;
+        // :::::::::::::::::::: ABOUT ::::::::::::::::::::::
+        case 'about':
+            include(ROOT . 'modules/about/index.php');
+        break;
+        case 'about-edit':
+            include(ROOT . 'modules/about/edit.php');
+        break;
+        case 'about-edit-skills':
+            include(ROOT . 'modules/about/edit-skills.php');
+        break;
+        case 'about-edit-jobs':
+            include(ROOT . 'modules/about/edit-jobs.php');
+        break;
+
+        // :::::::::::::::::::: PORTFOLIO ::::::::::::::::::::::
+        case 'portfolio':
+            include(ROOT . 'modules/portfolio/index.php');
+        break;
+        case 'portfolio-new': 
+            include(ROOT . 'modules/portfolio/new.php');
+        break;
+        case 'portfolio-edit': 
+            include(ROOT . 'modules/portfolio/edit.php');
+        break;
+        case 'portfolio-single-work': 
+            include(ROOT . 'modules/portfolio/single.php');
+        break;
 
         default:
             include(ROOT . 'modules/main/index.php');

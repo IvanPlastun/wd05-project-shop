@@ -1,4 +1,9 @@
 <?php
+    if(!isLoggedIn()) { 
+        header('Location: ' . HOST);
+        die();
+    }
+
     $title = "Редактировать профиль";
     $pattern = '/^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z{2,4}\.])?[a-z]{2,4}$/i';
     $currentUser = $_SESSION['logged_user'];
@@ -136,12 +141,5 @@
     include(ROOT . 'templates/_parts/_head.tpl');
     include(ROOT . 'templates/template.tpl');
     include(ROOT . 'templates/_parts/_footer.tpl');
+    include(ROOT . 'templates/_parts/_foot-editProtfile.tpl');
 ?>
-    <!-- build:jsLibs js/libs.js -->
-    <script src="<?=HOST?>templates/assets/libs/jquery/jquery.min.js"></script><!-- endbuild -->
-	<!-- build:jsMain js/main.js -->
-	<script src="<?=HOST?>templates/assets/js/main.js"></script>
-	<script src="<?=HOST?>templates/assets/js/input-file.js"></script><!-- endbuild -->
-	<script defer="defer" src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-</body>
-</html>

@@ -1,10 +1,9 @@
-.nav__link--active {
-    text-decoration: none !important;
+.notification {
+    margin-bottom: 10px;
 }
 
-.title--width {
-    max-width: 750px;
-    word-break: break-word;
+.nav__link--active {
+    text-decoration: none !important;
 }
 
 .input-post-content {
@@ -27,3 +26,136 @@
 table th {
     text-align: left;
 }
+
+.post-info__topic {
+    color: #037EC6;
+}
+
+.post-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-head-buttons {
+    display: flex;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-weight: 400;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+.link {
+    -webkit-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+
+.link:hover {
+    color: #0094eb;
+    text-decoration: none;
+}
+
+.link:active {
+    color: #0069a7;
+}
+
+.about-info p:nth-child(2) {
+    margin-bottom: 0 !important;
+}
+
+.about-info h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.workflow-block {
+    margin-bottom: 40px;
+}
+
+.workflow-block:last-child {
+    margin-bottom: 0;
+}
+
+.circle-default--green {
+    stroke: rgba(58, 170, 53, 0.2);
+}
+
+.circle-default--blue {
+    stroke: rgba(0, 156, 245, 0.2);
+}
+
+.circle-default--yellow {
+    stroke: rgba(255, 204, 0, 0.2);
+}  
+
+
+
+.separate-work-description h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.separate-work-description p:nth-last-child(-n+3) {
+    font-weight: 700;
+    margin-top: 1em;
+}
+
+.separate-work-result h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.separate-work-result p:last-child {
+    margin-bottom: 0;
+}
+
+.separate-work-technologies h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.separate-work-technologies ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.separate-work-technologies ul li {
+    line-height: 1;
+    margin-bottom: 1.25em;
+}
+
+.separate-work-technologies ul li::before { 
+    display: inline-block;
+    content: "•";
+    margin-right: 5px;
+}
+
+.separate-work-technologies ul li:last-child {
+    margin-bottom: 0;
+}
+
+.work-box {
+    margin-right: 30px;
+    margin-bottom: 50px;
+}
+
+.work-box:nth-child(3n) {
+    margin-right: 0;
+}
+
+.work-box:nth-last-child(-n+3) {
+    margin-bottom: 0px;
+}
+
+
+
