@@ -39,6 +39,7 @@
                 $jobs->description = htmlentities($_POST['description']);
 
                 R::store($jobs);
+                $jobExp = R::find('jobs', 'ORDER BY id DESC');
             }
         }
     }

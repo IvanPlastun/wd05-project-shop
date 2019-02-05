@@ -121,11 +121,13 @@
                     $user->avatar_small = '48-' . $db_file_name;
                 }
 
-                R::store($user);
-                //Присваиваем сессии обновленные данные о пользователе
-                $_SESSION['logged_user'] = $user;
-                header('Location: ' . HOST . 'profile');
-                exit();
+                if(empty($errors)) {
+                    R::store($user);
+                    //Присваиваем сессии обновленные данные о пользователе
+                    $_SESSION['logged_user'] = $user;
+                    header('Location: ' . HOST . 'profile');
+                    exit();
+                }
             }
         }
     }

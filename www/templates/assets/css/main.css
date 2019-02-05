@@ -1359,15 +1359,11 @@ a.title-medium,
 .svg-box {
   width: 126px;
   height: 126px;
-  viewbox: 0 0 115 115;
 }
 .circle {
-  cx: 63;
-  cy: 63;
-  r: 56;
+  stroke-dasharray: 351.85px;
   stroke-width: 10px;
   fill: transparent;
-  stroke-dasharray: 351.85px;
   -webkit-transform-origin: center;
   -ms-transform-origin: center;
   transform-origin: center;
@@ -1383,45 +1379,6 @@ a.title-medium,
 }
 .circle--yellow {
   stroke: #ffcc00;
-}
-.val-0 {
-  stroke-dashoffset: 351.85px;
-}
-.val-10 {
-  stroke-dashoffset: 316.66px;
-}
-.val-20 {
-  stroke-dashoffset: 281.48px;
-}
-.val-25 {
-  stroke-dashoffset: 263.88px;
-}
-.val-30 {
-  stroke-dashoffset: 246.29px;
-}
-.val-40 {
-  stroke-dashoffset: 211.11px;
-}
-.val-50 {
-  stroke-dashoffset: 175.92px;
-}
-.val-60 {
-  stroke-dashoffset: 140.74px;
-}
-.val-70 {
-  stroke-dashoffset: 105.55px;
-}
-.val-75 {
-  stroke-dashoffset: 87.96px;
-}
-.val-80 {
-  stroke-dashoffset: 70.37px;
-}
-.val-90 {
-  stroke-dashoffset: 35.18px;
-}
-.val-100 {
-  stroke-dashoffset: 0px;
 }
 .container-indicators {
   width: 100%;

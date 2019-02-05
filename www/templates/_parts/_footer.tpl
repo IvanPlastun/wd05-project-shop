@@ -19,11 +19,10 @@
                 </div>
                 <div class="col-4 no-paddings">
                     <div class="social">
-                        <a href="#!" target="_blank"><span class="social-icon"><i class="fab fa-vk"></i></span></a>
-                        <a href="#!" target="_blank"><span class="social-icon"><i class="fab fa-twitter"></i></span></a>
-                        <a href="#!" target="_blank"><span class="social-icon"><i class="fab fa-youtube"></i></span></a>
-                        <a href="#!" target="_blank"><span class="social-icon"><i class="fab fa-instagram"></i></span></a>
-                        <a href="#!" target="_blank"><span class="social-icon"><i class="fab fa-facebook-f"></i></span></a>
+                        <a href="https://vk.com/id127490572" target="_blank"><span class="social-icon"><i class="fab fa-vk"></i></span></a>
+                        <a href="https://www.youtube.com/channel/UCBDUTSVmivfvBwSzjStLHPA?view_as=subscriber" target="_blank"><span class="social-icon"><i class="fab fa-youtube"></i></span></a>
+                        <a href="https://www.instagram.com/ivanplastun6/" target="_blank"><span class="social-icon"><i class="fab fa-instagram"></i></span></a>
+                        <a href="https://www.facebook.com/plastun.vanya" target="_blank"><span class="social-icon"><i class="fab fa-facebook-f"></i></span></a>
                     </div>
                 </div>
             </div>

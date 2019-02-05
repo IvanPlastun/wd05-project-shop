@@ -115,4 +115,25 @@
         $result = mb_substr($temp, 0, $spacePosition, $encoding) . $postfix;
         return $result;
     }
+
+
+    function pagination($results_per_page, $type) {
+        $number_of_results = R::count($type);
+        $number_of_pages = ceil($number_of_results / $results_per_page);
+
+        if(!isset($_GET['page'])) {
+            $page_number = 1;
+        } else {
+            $page_number = $_GET['page'];
+        }
+
+        $starting_limit_number = ($page_number - 1) * $results_per_page;
+        $sql_pages_limit = 'LIMIT ' . $starting_limit_number . ',' . $results_per_page;
+
+        $result['number_of_pages'] = $number_of_pages;
+        $result['page_number'] = $page_number;
+        $result['sql_pages_limit'] = $sql_pages_limit;
+
+        return $result;
+    }
 ?>

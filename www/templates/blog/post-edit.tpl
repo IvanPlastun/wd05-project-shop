@@ -1,3 +1,10 @@
+<?php
+    function dataFromPOST($nameField, $keyDB = '') {
+        global $post;
+        echo (@$_POST[$nameField] != '') ? @$_POST[$nameField] : $post[$keyDB];
+    }
+?>
+
 <div class="container pl-0 pr-0 pt-80 pb-120">
     <div class="row m-0">
         <div class="col-10 offset-1 p-0">
@@ -7,10 +14,13 @@
                 <form enctype="multipart/form-data" method="POST" action="<?=HOST?>blog/post-edit?id=<?=$post['id']?>">
                     <div class="add-post-content__name mt-40 mb-20">
                         <label class="label" for="edit-post-name">Заголовок</label>
-                        <input class="input" name="post-title" id="edit-post-name" type="text" placeholder="Введите заголовок поста" value="<?=$post['title']?>"/>
+                        <input class="input" name="post-title" id="edit-post-name" type="text" placeholder="Введите заголовок поста" value="<?=dataFromPOST('post-title', 'title')?>"/>
                     </div>
                     <label class="label" for="select-category">Категории</label>
                     <select class="form-control mt-10" name="post-categories" id="select-category">
+                        <?php if($post['category'] == '' || $post['category'] == NULL) { ?>
+                            <option disabled selected>Выберите категорию</option>
+                        <?php } ?>
                         <?php foreach($categories as $category): ?>
                             <option value="<?=$category['id']?>" <?php echo ($post['category'] == $category['id']) ? "selected" : "";?>><?=$category['category_name']?></option>
                         <?php endforeach ?>
@@ -23,7 +33,7 @@
                                 <input class="input-file" type="file" name="post-image" id="upload-file" data-multiple-caption="{count}" />
                                 <label class="input-file-mark" for="upload-file">Выбрать файл</label><span>Файл не выбран</span>
                             </div>
-                            <?php if($post['post_img_small'] != '') { ?>
+                            <?php if($post['post_img_small'] != '' && file_exists(ROOT . 'usercontent/blog/' . $post['post_img_small'])) { ?>
                             <div class="upload-file-image-box">
                                 <img src="<?=HOST?>usercontent/blog/<?=$post['post_img_small']?>" alt="<?=$post['title']?>">
                                 <input class="button button-delete button--small-delete upload-file-image-box--button-position" type="submit" name="delete-postImg" value="Удалить">
@@ -31,8 +41,9 @@
                             <?php } ?>
                         </section>
                     </div>
-                    <div class="add-post-content__main mt-30">
-                        <textarea class="textarea input-post-content" name="post-text" id="editPostText" placeholder="Введите текст поста"><?=$post['text']?></textarea>
+                    <p class="label mt-30" for="add-post-city">Содержание</p>
+                    <div class="add-post-content__main">
+                        <textarea class="textarea input-post-content" name="post-text" id="editPostText" placeholder="Введите текст поста"><?=dataFromPOST('post-text', 'text');?></textarea>
                     </div>
                     <div class="add-post-content__submit mt-30">
                         <input class="button button-save mr-20" type="submit" name="update-post" value="Обновить" />

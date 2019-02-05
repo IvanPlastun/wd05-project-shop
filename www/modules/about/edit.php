@@ -80,10 +80,11 @@
                     $img->writeImage($target_file);
                     $about->photo = $db_file_name;
                 }
-
-                R::store($about);
-                header('Location: ' . HOST . 'about');
-                exit();
+                if(empty($errors)) {
+                    R::store($about);
+                    header('Location: ' . HOST . 'about');
+                    exit();
+                }
             }
         }
     }

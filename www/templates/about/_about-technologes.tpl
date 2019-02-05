@@ -9,12 +9,13 @@
 ?>    
     <div class="indicator">
         <svg class="svg-box">
-            <circle class="circle circle-default--<?=$color?>" r="<?=$options['radius']?>" cx="<?=$cx?>" cy="<?=$cy?>" stroke-dasharray="<?=$lengthCircle?>"></circle>
+            <circle class="circle circle-default--<?=$color?>" r="<?=$options['radius']?>" cx="<?=$cx?>" cy="<?=$cy?>" style="stroke-dasharray:<?=$lengthCircle?>"></circle>
             <circle class="circle circle--<?=$color?>" r="<?=$options['radius']?>" cx="<?=$cx?>" cy="<?=$cy?>" stroke-dashoffset="<?=$offset?>"></circle>
         </svg>
         <div class="indicator__text"><?=$title?></div>
     </div>
 <?php } ?>
+
 <div class="section-indikators pt-50">
     <div class="container">
         <div class="row indikators-block">
