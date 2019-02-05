@@ -79,8 +79,17 @@
                 <div class="row">
                     <div class="col-10 offset-1">
                         <div class="separate-work-pagination">
-                            <a class="button button-previous button-work-pagination-prev" href="<?=HOST?>portfolio">Все работы <span class="button__icon button__icon--mright float-left"><i class="mr-0 fas fa-arrow-left"></i></span></a>
-                            <a class="button button-next button-work-pagination-next" href="#">Следующая работа <span class="button__icon"><i class="mr-0 fas fa-arrow-right"></i></span></a></div>
+                            <?php if($prevId != '') { ?>
+                                <a class="button button-previous" href="<?=HOST?>portfolio-single-work?id=<?=$prevId?>">Предыдущая работа <span class="button__icon button__icon--mright float-left"><i class="mr-0 fas fa-arrow-left"></i></span></a>
+                            <?php } else { ?>
+                                <a class="button button-previous" href="<?=HOST?>portfolio">Все работы <span class="button__icon button__icon--mright float-left"><i class="mr-0 fas fa-arrow-left"></i></span></a>
+                            <?php } ?>
+                            <?php if($nextId != '') { ?>
+                                <a class="button button-next" href="<?=HOST?>portfolio-single-work?id=<?=$nextId?>">Следующая работа <span class="button__icon"><i class="mr-0 fas fa-arrow-right"></i></span></a>
+                            <?php } else { ?>
+                                <a class="button button-next button-work-pagination-next" href="<?=HOST?>portfolio">Все работы <span class="button__icon"><i class="mr-0 fas fa-arrow-right"></i></span></a>
+                            <?php } ?>
+                        </div>
                     </div>
                 </div>
             </div>

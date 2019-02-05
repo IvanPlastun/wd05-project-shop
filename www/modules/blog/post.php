@@ -8,8 +8,6 @@
         LEFT JOIN categories ON categories.id = posts.category
         WHERE posts.id =" . $_GET['id'] . " LIMIT 1";
 
-    //$posts = R::find('posts');
-
     $post = R::getAll($sqlPost);
     $post = $post[0];
 
@@ -21,6 +19,15 @@
         WHERE comments.post_id =" . $_GET['id'];
 
     $comments = R::getAll($sqlComments);
+
+    $postsId = R::getCol("SELECT id FROM `posts`");
+    foreach($postsId as $index => $id) {
+        if($id == $post['id']) {
+            @$nextId = $postsId[$index + 1];
+            @$prevId = $postsId[$index - 1];
+            break;
+        }
+    }
 
     if(!empty($_POST)) {
         if(isset($_POST['add-comment'])) {

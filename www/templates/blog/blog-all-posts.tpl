@@ -17,4 +17,7 @@
             </div>
         <?php } ?>
     </div>
+    <div class="row ml-0 mr-0">
+        <?php ($pagination['number_of_pages'] > 1) ? include(ROOT . 'templates/_parts/_pagination.tpl') : '';?>
+    </div>
 </div>

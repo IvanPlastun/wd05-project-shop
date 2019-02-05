@@ -1,7 +1,7 @@
 <?php
-
+    $pagination = pagination(9, 'portfolio');
     $title = 'Портфолио';
-    $works = R::find('portfolio', 'ORDER BY id DESC');
+    $works = R::find('portfolio', 'ORDER BY id DESC ' . $pagination['sql_pages_limit']);
 
     //Подготаливаем конетнт для центральной части
     ob_start();

@@ -10,8 +10,18 @@
     $work = R::getAll($sqlWorks);
     $work = $work[0];
 
+
+    $worksId = R::getCol("SELECT id FROM `portfolio`");
+    foreach($worksId as $index => $id) {
+        if($id == $work['id']) {
+            @$nextId = $worksId[$index + 1];
+            @$prevId = $worksId[$index - 1];
+            break;
+        }
+    }
+
     ob_start();
-    include(ROOT . 'templates/_parts/_header-admin.tpl');
+    include(ROOT . 'templates/_parts/_header.tpl');
     include(ROOT . 'templates/portfolio/single.tpl');
     $content = ob_get_contents();
     ob_end_clean();
