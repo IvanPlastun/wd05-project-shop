@@ -14,11 +14,18 @@
             <?php ($contacts['email'] != '' || $contacts['email'] != NULL) ? showContactInfo('Email', 'email', 'link') : '';?>
             <?php ($contacts['github'] != '' || $contacts['github'] != NULL) ? showContactInfo('Github', 'github', 'link') : '';?>
             <?php ($contacts['skype'] != '' || $contacts['skype'] != NULL) ? showContactInfo('Skype', 'skype', 'link') : '';?>
-            <?php 
-                foreach($socialNetworks as $network) { 
-                    ($contacts[$network] != '' || $contacts[$network] != NULL) ? showContactInfo('Социальные сети', $socialNetworks, 'social') : '';
-                }
-            ?>
+            <?php if(count($socialNetworks) != 0):?>
+                <div class="row mb-15">
+                    <div class="col-6 contacts-category">
+                        <p>Социальные сети:</p>
+                    </div>
+                    <div class="col-6 link-box-info">
+                    <?php
+                        showSocialNetworks($socialNetworks);
+                    ?>
+                    </div>
+                </div>
+            <?php endif ?>
             <?php ($contacts['address'] != '' || $contacts['address'] != NULL) ? showContactInfo('Телефон', 'phone') : '';?>
             <?php ($contacts['address'] != '' || $contacts['address'] != NULL) ? showContactInfo('Адрес', 'address') : '';?>
         </div>

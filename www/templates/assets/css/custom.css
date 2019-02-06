@@ -2,6 +2,20 @@
     margin-bottom: 10px;
 }
 
+.header__wrapper--user {
+    margin-bottom: 28px;
+}
+
+.nav {
+    margin-left: 0;
+    padding-left: 45px;
+}
+
+.logo {
+    padding: 0;
+}
+
+
 .nav__link--active {
     text-decoration: none !important;
 }
@@ -98,6 +112,15 @@ h1, h2, h3, h4, h5, h6 {
 .separate-work-description h3 {
     font-size: 24px;
     margin-bottom: 20px;
+}
+
+.separate-work-title--size {
+    margin-top: 0;
+}
+
+.separate-work-header-bg {
+    padding-top: 0;
+    padding-top: 80px;
 }
 
 .separate-work-description p:nth-last-child(-n+3) {

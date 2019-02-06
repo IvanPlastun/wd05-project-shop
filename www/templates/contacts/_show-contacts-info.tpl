@@ -18,23 +18,28 @@
                     <p><a class="link" href="<?=$contacts[$nameParameter]?>" target="_blank"><?=$contacts[$nameParameter]?></a></p>
                 <?php } ?>
             </div>
-        <?php } else if($type == 'social') { ?>
-            <div class="col-6 link-box-info">
-                <?php if(is_array($nameParameter)) { ?>
-                    <?php foreach($nameParameter as $socialNet) { ?>
-                        <?php if($contacts[$socialNet] != '') { ?>
-                            <?php if($socialNet == 'vkontakte') { ?>
-                                <p><a class="link link--bold" href="<?=$contacts[$socialNet]?>" target="_blank">Профиль Вконтакте</a></p>
-                            <?php } else if($socialNet == 'facebook') {  ?>
-                                <p><a class="link link--bold" href="<?=$contacts[$socialNet]?>" target="_blank">Профиль Facebook</a></p>
-                            <?php } else if($socialNet == 'twitter') { ?>
-                                <p><a class="link link--bold" href="<?=$contacts[$socialNet]?>" target="_blank">Профиль Twitter</a></p>
-                            <?php } ?>
-                        <?php } ?>
-                    <?php } ?>
-                <?php } ?>
-            </div>
         <?php } ?>
     </div>
 <?php } ?>
 <?php $socialNetworks = array('vkontakte', 'facebook', 'twitter');?>
+
+
+
+
+<?php function showSocialNetworks($nameParameter) { 
+    global $contacts;
+    ?>
+    <?php if(is_array($nameParameter)) { ?>
+        <?php foreach($nameParameter as $socialNet) { ?>
+            <?php if($contacts[$socialNet] != '') { ?>
+                <?php if($socialNet == 'vkontakte' && $contacts[$socialNet] != '') { ?>
+                    <p><a class="link link--bold" href="<?=$contacts[$socialNet]?>" target="_blank">Профиль Вконтакте</a></p>
+                <?php } else if($socialNet == 'facebook' && $contacts[$socialNet] != '') {  ?>
+                    <p><a class="link link--bold" href="<?=$contacts[$socialNet]?>" target="_blank">Профиль Facebook</a></p>
+                <?php } else if($socialNet == 'twitter' && $contacts[$socialNet] != '') { ?>
+                    <p><a class="link link--bold" href="<?=$contacts[$socialNet]?>" target="_blank">Профиль Twitter</a></p>
+                <?php } ?>
+            <?php } ?>
+        <?php } ?>
+    <?php } ?>
+<?php } ?>

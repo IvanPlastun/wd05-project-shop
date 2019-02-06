@@ -1,4 +1,4 @@
-<nav class="nav">
+<nav class="nav col">
     <a class="nav__link <?=$uri[0] == '' ? 'nav__link--active' : '';?>" href="<?=HOST?>">Главная</a>
     <a class="nav__link <?=$uri[0] == 'about' ? 'nav__link--active' : '';?>" href="<?=HOST?>about">Обо мне</a>
     <a class="nav__link <?=$uri[0] == 'portfolio' ? 'nav__link--active' : '';?>" href="<?=HOST?>portfolio">Работы</a>

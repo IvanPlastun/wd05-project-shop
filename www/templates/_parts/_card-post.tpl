@@ -6,6 +6,6 @@
             <img src="<?=HOST?>usercontent/no-image.jpg?>" alt="<?=$post['title']?>" />
         <?php } ?>
     </div>
-    <div class="card-box__title"><?=mbCutString($post['title'], 49)?></div>
+    <div class="card-box__title"><?=mbCutString($post['title'], 40)?></div>
     <a class="button card-box--button" href="<?=HOST?>blog/post?id=<?=$post['id']?>">Читать</a>
 </div>

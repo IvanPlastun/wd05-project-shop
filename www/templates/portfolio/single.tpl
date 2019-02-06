@@ -1,11 +1,4 @@
     <div class="separate-work-header-bg">
-        <div class="logo ml-50 mb-120">
-            <div class="logo__wrapper">
-                <div class="logo__img logo__img--dark mr-15"><i class="far fa-paper-plane mr-0"></i></div>
-                <div class="logo__title logo__title--dark">Digital Lifestyle</div>
-            </div>
-            <div class="logo__description logo__description--dark ml-50">Сайт IT специалиста</div>
-        </div>
         <div class="container mb-50">
             <div class="separate-work-head">
                 <div class="row no-gutters justify-content-between">
@@ -56,25 +49,43 @@
             <?php } ?>
         </div>
         <div class="container">
+        
             <div class="separate-work-description-wrapper">
                 <div class="row">
-                    <div class="col-5 offset-1">
-                        <div class="separate-work-description"><?=$work['description']?></div>
-                        <div class="separate-work-result"><?=$work['result']?></div>
-                    </div>
-                    <div class="col-5">
-                        <div class="separate-work-technologies mb-25"><?=$work['technologes']?></div>
-                        <div class="separate-work-link-project mb-35">
-                            <h3 class="title-3 mb-20 mt-25 strong">Ссылка на проект</h3>
-                            <a class="separate-work-link-project__link" href="<?=$work['linkproject']?>" target="_blank"><?=$work['linkproject']?></a>
+                    <?php if($work['technologes'] != '' && $work['linkproject'] != '' && $work['github'] != '') { ?>
+                        <div class="col-5 offset-1">
+                            <div class="separate-work-description"><?=$work['description']?></div>
+                            <div class="separate-work-result"><?=$work['result']?></div>
                         </div>
-                        <div class="separate-work-link-github">
-                            <h3 class="title-3 title-3 mb-20 mt-0 strong">Код на github</h3>
-                            <a class="separate-work-link-github__link" href="<?=$work['github']?>" target="_blank"><?=$work['github']?></a>
+                    <?php } else { ?>
+                        <div class="col-10 offset-1">
+                            <div class="separate-work-description"><?=$work['description']?></div>
+                            <div class="separate-work-result"><?=$work['result']?></div>
                         </div>
-                    </div>
+                    <?php } ?>
+
+                    <?php if($work['technologes'] != '' && $work['linkproject'] != '' && $work['github'] != ''): ?>
+                        <div class="col-5">
+                            <?php if($work['technologes'] != ''):?>
+                                <div class="separate-work-technologies mb-25"><?=$work['technologes']?></div>
+                            <?php endif ?>
+                            <?php if($work['linkproject'] != ''):?>
+                                <div class="separate-work-link-project mb-35">
+                                    <h3 class="title-3 mb-20 mt-25 strong">Ссылка на проект</h3>
+                                    <a class="separate-work-link-project__link" href="<?=$work['linkproject']?>" target="_blank"><?=$work['linkproject']?></a>
+                                </div>
+                            <?php endif ?>
+                            <?php if($work['github'] != ''):?>
+                                <div class="separate-work-link-github">
+                                    <h3 class="title-3 title-3 mb-20 mt-0 strong">Код на github</h3>
+                                    <a class="separate-work-link-github__link" href="<?=$work['github']?>" target="_blank"><?=$work['github']?></a>
+                                </div>
+                            <?php endif ?>
+                        </div>
+                    <?php endif ?>
                 </div>
             </div>
+
             <div class="separate-work-pagination-wrapper mt-45">
                 <div class="row">
                     <div class="col-10 offset-1">

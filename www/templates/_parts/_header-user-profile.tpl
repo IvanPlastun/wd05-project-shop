@@ -1,4 +1,4 @@
-<div class="user-block">
+<div class="user-block col-auto">
     <div class="user-block__wrapper">
         <div class="row user-group">
             <div class="avatar avatar--small">

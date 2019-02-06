@@ -20,10 +20,6 @@
                 $errors[] = ['title' => 'Напишите кратко о достигнутом результате'];
             }
 
-            if(trim($_POST['technologes']) == '') {
-                $errors[] = ['title' => 'Укажите технологии, которые использовались в проекте'];
-            }
-
             if(empty($errors)) {
                 $portfolio = R::dispense('portfolio');
                 $portfolio->author_id = $_SESSION['logged_user']['id'];
