@@ -48,9 +48,6 @@
                 $errors[] = ['title' => 'Напишите кратко о достигнутом результате'];
             }
 
-            if(trim($_POST['technologes']) == '') {
-                $errors[] = ['title' => 'Укажите технологии, которые использовались в проекте'];
-            }
 
             if(empty($errors)) {
                 $work->author_id = $_SESSION['logged_user']['id'];

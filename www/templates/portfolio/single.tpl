@@ -52,7 +52,7 @@
         
             <div class="separate-work-description-wrapper">
                 <div class="row">
-                    <?php if($work['technologes'] != '' && $work['linkproject'] != '' && $work['github'] != '') { ?>
+                    <?php if($work['technologes'] != '' || $work['linkproject'] != '' || $work['github'] != '') { ?>
                         <div class="col-5 offset-1">
                             <div class="separate-work-description"><?=$work['description']?></div>
                             <div class="separate-work-result"><?=$work['result']?></div>
@@ -64,7 +64,7 @@
                         </div>
                     <?php } ?>
 
-                    <?php if($work['technologes'] != '' && $work['linkproject'] != '' && $work['github'] != ''): ?>
+                    <?php if($work['technologes'] != '' || $work['linkproject'] != '' || $work['github'] != ''): ?>
                         <div class="col-5">
                             <?php if($work['technologes'] != ''):?>
                                 <div class="separate-work-technologies mb-25"><?=$work['technologes']?></div>
