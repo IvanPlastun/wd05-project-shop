@@ -1,4 +1,4 @@
-<div class="user-block col-auto">
+<div class="user-block col-auto pl-0 pr-0 mr-40">
     <div class="user-block__wrapper">
         <div class="row user-group">
             <div class="avatar avatar--small">
@@ -13,6 +13,7 @@
                 <p>Пользователь</p>
                 <div class="row user-buttons">
                     <a class="button button-profile" href="<?=HOST?>profile">Профиль</a>
+                    <a class="button button-profile" href="<?=HOST?>myorders">Заказы</a>
                     <a class="button button-profile" href="<?=HOST?>logout">Выход</a>
                 </div>
             </div>

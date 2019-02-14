@@ -44,7 +44,6 @@
         case 'profile-edit':
             include(ROOT . 'modules/profile/edit.php');
         break;
-
         // :::::::::::::::::::: BLOG ::::::::::::::::::::::::::
         case 'blog':
             include(ROOT . 'modules/blog/index.php');
@@ -61,7 +60,6 @@
         case 'blog/post':
             include(ROOT . 'modules/blog/post.php');
         break;
-
         // :::::::::::::::::::: CATEGOEIRS ::::::::::::::::::::::
         case 'blog/categories':
             include(ROOT . 'modules/categories/all.php');
@@ -75,7 +73,6 @@
         case 'blog/category-delete':
             include(ROOT . 'modules/categories/delete.php');
         break;
-
         // :::::::::::::::::::: CONTACTS ::::::::::::::::::::::
         case 'contacts':
             include(ROOT . 'modules/contacts/index.php');
@@ -99,7 +96,6 @@
         case 'about-edit-jobs':
             include(ROOT . 'modules/about/edit-jobs.php');
         break;
-
         // :::::::::::::::::::: PORTFOLIO ::::::::::::::::::::::
         case 'portfolio':
             include(ROOT . 'modules/portfolio/index.php');
@@ -112,6 +108,64 @@
         break;
         case 'portfolio-single-work': 
             include(ROOT . 'modules/portfolio/single.php');
+        break;
+        // :::::::::::::::::::: SHOP ::::::::::::::::::::::
+        case 'shop':
+            include(ROOT . 'modules/shop/index.php');
+        break;
+        case 'shop/new':
+            include(ROOT . 'modules/shop/item-new.php');
+        break;
+        case 'shop/item':
+            include(ROOT . 'modules/shop/item.php');
+        break;
+        case 'shop/item-edit':
+            include(ROOT . 'modules/shop/item-edit.php');
+        break;
+        case 'shop/item-delete':
+            include(ROOT . 'modules/shop/item-delete.php');
+        break;
+        // :::::::::::::::::::: CART ::::::::::::::::::::::
+        case 'addToCart':
+            include(ROOT . 'modules/cart/addtocart.php');
+        break;
+        case 'cart':
+            include(ROOT . 'modules/shop/cart.php');
+        break;
+        case 'removefromcart':
+            include(ROOT . 'modules/shop/removefromcart.php');
+        break;
+        // :::::::::::::::::::: ORDERS ::::::::::::::::::::::
+        case 'order-create':
+            include(ROOT . 'modules/orders/order-create.php');
+        break;
+        case 'order-created-success':
+            include(ROOT . 'modules/orders/order-created-success.php');
+        break;
+        case 'orders':
+            include(ROOT . 'modules/orders/orders.php');
+        break;
+        case 'order':
+            include(ROOT . 'modules/orders/order.php');
+        break;
+        case 'myorders':
+            include(ROOT . 'modules/orders/myorders.php');
+        break;
+        case 'myorder':
+            include(ROOT . 'modules/orders/myorder.php');
+        break;
+        // :::::::::::::::::::: PAYMENT SYSTEMS ::::::::::::::::::::::
+        case 'payment-choice';
+            include(ROOT . 'modules/payments/payment-choice.php');
+        break;
+        case 'payment-yandex';
+            include(ROOT . 'modules/payments/payment-yandex.php');
+        break;
+        case 'after-payment':
+            include(ROOT . 'modules/payments/after-payment.php');
+        break;
+        case 'payment-yandex-notify':
+            include(ROOT . 'modules/payments/payment-yandex-nofiy.php');
         break;
 
         default:

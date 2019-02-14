@@ -136,4 +136,30 @@
 
         return $result;
     }
+
+    function price_format($price){
+        return number_format($price, 0, '', ' ');
+    }
+
+    function endOfOrders($count) {
+        $number = substr($count, -2);
+        if($count >= 110) {
+            $hundreds = substr($count, -3, 1);
+            if($hundreds > 0 && $number >= 10 && $number <= 20)
+                $ending = 'ров';
+        }
+
+        if($number >= 10 && $number <= 20) {
+            $ending = 'ров';
+        } else {
+            $number = substr($count, -1);
+
+            if($number == 0) $ending = 'ров';
+            if($number == 1) $ending = 'р';
+            if($number >= 2 && $number <= 4) $ending = "ра";
+            if($number >= 5 && $number <= 9) $ending = 'ров';
+        }
+
+        echo 'това'. $ending;
+    }
 ?>

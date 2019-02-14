@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 06 2019 г., 13:40
+-- Время создания: Фев 14 2019 г., 19:40
 -- Версия сервера: 5.7.23
 -- Версия PHP: 7.0.32
 
@@ -123,6 +123,31 @@ INSERT INTO `contacts` (`id`, `firstname`, `lastname`, `email`, `phone`, `addres
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `goods`
+--
+
+CREATE TABLE `goods` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `price` int(11) UNSIGNED DEFAULT NULL,
+  `price_old` int(11) UNSIGNED DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_520_ci,
+  `img` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `img_small` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Дамп данных таблицы `goods`
+--
+
+INSERT INTO `goods` (`id`, `title`, `price`, `price_old`, `description`, `img`, `img_small`) VALUES
+(2, 'iMac&nbsp;Pro', 430159, 400185, '<p>Профессионалам нравится работать на&nbsp;iMac. Поэтому мы&nbsp;создали iMac, идеально отвечающий вашим запросам. Самая мощная графика и&nbsp;самые производительные процессоры в&nbsp;истории Mac, передовые накопители, модули памяти, порты ввода/вывода, впечатляющий дисплей Retina&nbsp;5K и&nbsp;тонкий корпус &laquo;всё в&nbsp;одном&raquo;. Теперь все&nbsp;&mdash; фотографы, специалисты по&nbsp;видеомонтажу и&nbsp;3D-﻿анимации, профессиональные музыканты, разработчики&nbsp;ПО и&nbsp;учёные&nbsp;&mdash; могут воплощать на&nbsp;iMac&nbsp;Pro даже самые невероятные&nbsp;идеи.</p>\r\n', '493090820.jpg', '320-493090820.jpg'),
+(3, 'MacBook&nbsp;Air', 123041, 106769, '<p>Это самый любимый Mac, в&nbsp;который можно заново влюбиться. Новый MacBook&nbsp;Air&nbsp;&mdash; ещё более тонкий и&nbsp;лёгкий, оснащён дисплеем Retina, Touch&nbsp;ID, клавиатурой нового поколения, трекпадом Force&nbsp;Touch. И&nbsp;представлен в&nbsp;трёх цветах&nbsp;&mdash; серебристом, золотом и&nbsp;&laquo;серый&nbsp;космос&raquo;. Это самый экологичный Mac. Сохранив его&nbsp;культовый дизайн, мы&nbsp;использовали для&nbsp;корпуса только переработанный алюминий.<sup><a href=\"https://www.apple.com/ru/macbook-air/#footnote-1\">1</a></sup>И&nbsp;это&nbsp;невероятно удобный MacBook&nbsp;Air&nbsp;&mdash; он&nbsp;работает весь день без подзарядки и&nbsp;может справиться с&nbsp;любыми задачами.</p>\r\n', '204919433.png', '320-204919433.png'),
+(4, 'iPad&nbsp;Pro', 83380, 67108, '<p><strong>Новый. Может всё. С&nbsp;дисплеем от&nbsp;и&nbsp;до.&nbsp;</strong>Это&nbsp;iPad&nbsp;Pro с&nbsp;абсолютно новым дизайном и&nbsp;самыми продвинутыми технологиями Apple. Он&nbsp;меняет все представления об&nbsp;iPad.</p>\r\n', '906533813.png', '320-906533813.png');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `jobs`
 --
 
@@ -161,6 +186,40 @@ CREATE TABLE `messages` (
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `firstname` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `lastname` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `phone` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `address` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `items` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `user_id` int(11) UNSIGNED DEFAULT NULL,
+  `items_count` int(11) UNSIGNED DEFAULT NULL,
+  `total_price` int(11) UNSIGNED DEFAULT NULL,
+  `status` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `payment` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `date_time` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Дамп данных таблицы `orders`
+--
+
+INSERT INTO `orders` (`id`, `firstname`, `lastname`, `email`, `phone`, `address`, `items`, `user_id`, `items_count`, `total_price`, `status`, `payment`, `date_time`) VALUES
+(3, 'Иван', 'Пластун', 'plastun.vanya@yandex.ru', '555-555-55-55', '', '[{\"id\":\"2\",\"title\":\"Imac Pro\",\"price\":\"1000\",\"count\":1}]', 1, 1, 1000, 'new', 'no', '2019-02-13 15:32:13'),
+(4, 'Сильвия', 'Ливенхайм', 'sylvia@gmail.com', '+7-957-145-32-98', '', '[{\"id\":\"2\",\"title\":\"Imac Pro\",\"price\":\"1000\",\"count\":12}]', 14, 12, 12000, 'new', 'no', '2019-02-13 20:37:35'),
+(5, 'Иван', 'Пластун', 'plastun.vanya@yandex.ru', '+7-957-145-32', '', '[{\"id\":\"2\",\"title\":\"Imac Pro\",\"price\":\"1000\",\"count\":35}]', 1, 35, 35000, 'new', 'no', '2019-02-14 10:07:41'),
+(6, 'Сильвия', 'Ливенхайм', 'sylvia@gmail.com', '+555-555-55-55', '', '[{\"id\":\"2\",\"title\":\"Imac Pro\",\"price\":\"1000\",\"count\":141}]', 14, 141, 141000, 'new', 'no', '2019-02-14 10:54:34'),
+(7, 'Сильвия', 'Ливенхайм', 'sylvia@gmail.com', '555-555-55-55', '', '[{\"id\":\"2\",\"title\":\"Imac Pro\",\"price\":\"1000\",\"count\":1}]', 14, 1, 1000, 'new', 'no', '2019-02-14 11:03:08'),
+(8, 'Иван', 'Пластун', 'plastun.vanya@yandex.ru', '+7-957-145-32', '', '[{\"id\":\"2\",\"title\":\"iMac&nbsp;Pro\",\"price\":\"430159\",\"count\":2},{\"id\":\"3\",\"title\":\"MacBook&nbsp;Air\",\"price\":\"123041\",\"count\":1},{\"id\":\"4\",\"title\":\"iPad&nbsp;Pro\",\"price\":\"83380\",\"count\":1}]', 1, 4, 1066739, 'new', 'no', '2019-02-14 19:38:05');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `portfolio`
 --
 
@@ -187,7 +246,8 @@ INSERT INTO `portfolio` (`id`, `author_id`, `title`, `description`, `result`, `t
 (1, 1, 'Верстка и frontend Интернет магазина', '<h3>Кратко о проекте</h3>\r\n\r\n<p>Сделана верстка и фронтэнд для интернет магазина мебели. Сверстано более 50-ти страниц. Сделаны все эффекты и интерактив. В работе использованы препроцессоры pug и less. Интерактив написан на JavaScript. Весь проект протестирован на своместимость, начиная с IE9. Для старых браузеров использован подход Graceful Degradation.</p>\r\n\r\n<p>Время работы над проектом: 6 недель</p>\r\n\r\n<p>Страниц сверстано: 52 страницы</p>\r\n\r\n<p>Бюджет проекта: до 60 000 рублей</p>\r\n', '<h3>Результат</h3>\r\n\r\n<p>Проект сделан в срок. Заказчик доволен. Сайт запущен, работает и уже радует покупками посетителей и владельцев бизнеса.</p>\r\n', '<h3>Технологии</h3>\r\n\r\n<ul>\r\n	<li>HTML5, CSS3.</li>\r\n	<li>JavaScript, jQuery.</li>\r\n	<li>LESS, PUG, Gulp, npm, bower.</li>\r\n</ul>\r\n', 'http://magnum-store.ru', 'https://github.com/pozitive/magnumstore/', '2019-02-02', '6396759033.jpg', '360-6396759033.jpg', NULL),
 (3, 1, 'Верстка и frontend Интернет магазина', '<h3>Кратко о проекте</h3>\r\n\r\n<p>Сделана верстка и фронтэнд для интернет магазина мебели. Сверстано более 50-ти страниц. Сделаны все эффекты и интерактив. В работе использованы препроцессоры pug и less. Интерактив написан на JavaScript. Весь проект протестирован на своместимость, начиная с IE9. Для старых браузеров использован подход Graceful Degradation.</p>\r\n\r\n<p>Время работы над проектом: 6 недель</p>\r\n\r\n<p>Страниц сверстано: 52 страницы</p>\r\n\r\n<p>Бюджет проекта: до 60 000 рублей</p>\r\n', '<h3>Результат</h3>\r\n\r\n<p>Проект сделан в срок. Заказчик доволен. Сайт запущен, работает и уже радует покупками посетителей и владельцев бизнеса.</p>\r\n', '<h3>Технологии</h3>\r\n\r\n<ul>\r\n	<li>HTML5, CSS3.</li>\r\n	<li>JavaScript, jQuery.</li>\r\n	<li>LESS, PUG, Gulp, npm, bower.</li>\r\n</ul>\r\n', 'http://magnum-store.ru', 'https://github.com/IvanPlastun', '2019-02-02', '9765441894.jpg', '360-9765441894.jpg', NULL),
 (4, 1, 'Верстка и frontend Интернет магазина', '<h3>Кратко о проекте</h3>\r\n\r\n<p>Сделана верстка и фронтэнд для интернет магазина мебели. Сверстано более 50-ти страниц. Сделаны все эффекты и интерактив. В работе использованы препроцессоры pug и less. Интерактив написан на JavaScript. Весь проект протестирован на своместимость, начиная с IE9. Для старых браузеров использован подход Graceful Degradation.</p>\r\n\r\n<p>Время работы над проектом: 6 недель</p>\r\n\r\n<p>Страниц сверстано: 52 страницы</p>\r\n\r\n<p>Бюджет проекта: до 60 000 рублей</p>\r\n', '<h3>Результат</h3>\r\n\r\n<p>Проект сделан в срок. Заказчик доволен. Сайт запущен, работает и уже радует покупками посетителей и владельцев бизнеса.</p>\r\n', '<h3>Технологии</h3>\r\n\r\n<ul>\r\n	<li>HTML5, CSS3.</li>\r\n	<li>JavaScript, jQuery.</li>\r\n	<li>LESS, PUG, Gulp, npm, bower.</li>\r\n</ul>\r\n', 'http://magnum-store.ru', 'https://github.com/IvanPlastun', '2019-02-02', '7339660644.jpeg', '360-7339660644.jpeg', '2019-02-02 23:43:55'),
-(5, 1, 'Верстка и frontend Интернет магазина', '<h3>Кратко о проекте</h3>\r\n\r\n<p>Сделана верстка и фронтэнд для интернет магазина мебели. Сверстано более 50-ти страниц. Сделаны все эффекты и интерактив. В работе использованы препроцессоры pug и less. Интерактив написан на JavaScript. Весь проект протестирован на своместимость, начиная с IE9. Для старых браузеров использован подход Graceful Degradation.</p>\r\n\r\n<p>Время работы над проектом: 6 недель</p>\r\n\r\n<p>Страниц сверстано: 52 страницы</p>\r\n\r\n<p>Бюджет проекта: до 60 000 рублей</p>\r\n', '<h3>Результат</h3>\r\n\r\n<p>Проект сделан в срок. Заказчик доволен. Сайт запущен, работает и уже радует покупками посетителей и владельцев бизнеса.</p>\r\n', '', '', '', '2019-02-06', NULL, NULL, '2019-02-06 13:38:05');
+(5, 1, 'Верстка и frontend Интернет магазина', '<h3>Кратко о проекте</h3>\r\n\r\n<p>Сделана верстка и фронтэнд для интернет магазина мебели. Сверстано более 50-ти страниц. Сделаны все эффекты и интерактив. В работе использованы препроцессоры pug и less. Интерактив написан на JavaScript. Весь проект протестирован на своместимость, начиная с IE9. Для старых браузеров использован подход Graceful Degradation.</p>\r\n\r\n<p>Время работы над проектом: 6 недель</p>\r\n\r\n<p>Страниц сверстано: 52 страницы</p>\r\n\r\n<p>Бюджет проекта: до 60 000 рублей</p>\r\n', '<h3>Результат</h3>\r\n\r\n<p>Проект сделан в срок. Заказчик доволен. Сайт запущен, работает и уже радует покупками посетителей и владельцев бизнеса.</p>\r\n', '', 'http://magnum-store.ru', 'https://github.com/pozitive/magnumstore/', '2019-02-06', '2645751953.png', '360-2645751953.png', '2019-02-07 12:58:02'),
+(6, 1, 'Верстка и frontend Интернет магазина', '<h3>Кратко о проекте</h3>\r\n\r\n<p>Сделана верстка и фронтэнд для интернет магазина мебели. Сверстано более 50-ти страниц. Сделаны все эффекты и интерактив. В работе использованы препроцессоры pug и less. Интерактив написан на JavaScript. Весь проект протестирован на своместимость, начиная с IE9. Для старых браузеров использован подход Graceful Degradation.</p>\r\n\r\n<p>Время работы над проектом: 6 недель</p>\r\n\r\n<p>Страниц сверстано: 52 страницы</p>\r\n\r\n<p>Бюджет проекта: до 60 000 рублей</p>\r\n', '<h3>Результат</h3>\r\n\r\n<p>Проект сделан в срок. Заказчик доволен. Сайт запущен, работает и уже радует покупками посетителей и владельцев бизнеса.</p>\r\n', '', '', '', '2019-02-07', '7366302490.jpg', '360-7366302490.jpg', '2019-02-07 12:58:29');
 
 -- --------------------------------------------------------
 
@@ -262,17 +322,18 @@ CREATE TABLE `users` (
   `country` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
   `city` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
   `avatar` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `avatar_small` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
+  `avatar_small` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `cart` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id`, `email`, `password`, `role`, `recovery_code`, `recovery_code_times`, `name`, `lastname`, `country`, `city`, `avatar`, `avatar_small`) VALUES
-(1, 'plastun.vanya@yandex.ru', '$2y$10$.rWOiBudAASbMbaGDJRONujrAG6vCrN.2kVKinFp4ORLXtxG9yokW', 'admin', '7BvJCjy5Utqz0Hf', 3, 'Иван', 'Пластун', 'Россия', 'Санкт-Петербург', '222744750.jpg', '48-222744750.jpg'),
-(14, 'sylvia@gmail.com', '$2y$10$s3TbjMx8oy5ZCWa1ymkbnean9.SFDxa92JgfbR9rqcH6d8y05FVpG', 'user', NULL, NULL, 'Сильвия', 'Ливенхайм', 'Япония', 'Токио', '861407470.jpg', '48-861407470.jpg'),
-(15, 'info432@mail.com', '$2y$10$c011FihZR.DdhFWeNeEdjOlw/r0As1HUwyfu8YDtJSdVwjpZ./4Sa', 'user', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `users` (`id`, `email`, `password`, `role`, `recovery_code`, `recovery_code_times`, `name`, `lastname`, `country`, `city`, `avatar`, `avatar_small`, `cart`) VALUES
+(1, 'plastun.vanya@yandex.ru', '$2y$10$.rWOiBudAASbMbaGDJRONujrAG6vCrN.2kVKinFp4ORLXtxG9yokW', 'admin', '7BvJCjy5Utqz0Hf', 3, 'Иван', 'Пластун', 'Россия', 'Санкт-Петербург', '222744750.jpg', '48-222744750.jpg', ''),
+(14, 'sylvia@gmail.com', '$2y$10$s3TbjMx8oy5ZCWa1ymkbnean9.SFDxa92JgfbR9rqcH6d8y05FVpG', 'user', NULL, NULL, 'Сильвия', 'Ливенхайм', 'Япония', 'Токио', '861407470.jpg', '48-861407470.jpg', '{\"2\":5}'),
+(15, 'info432@mail.com', '$2y$10$c011FihZR.DdhFWeNeEdjOlw/r0As1HUwyfu8YDtJSdVwjpZ./4Sa', 'user', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 --
 -- Индексы сохранённых таблиц
@@ -305,6 +366,12 @@ ALTER TABLE `contacts`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `goods`
+--
+ALTER TABLE `goods`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `jobs`
 --
 ALTER TABLE `jobs`
@@ -315,6 +382,13 @@ ALTER TABLE `jobs`
 --
 ALTER TABLE `messages`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `index_foreignkey_orders_user` (`user_id`);
 
 --
 -- Индексы таблицы `portfolio`
@@ -370,6 +444,12 @@ ALTER TABLE `contacts`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT для таблицы `goods`
+--
+ALTER TABLE `goods`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT для таблицы `jobs`
 --
 ALTER TABLE `jobs`
@@ -382,10 +462,16 @@ ALTER TABLE `messages`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT для таблицы `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT для таблицы `portfolio`
 --
 ALTER TABLE `portfolio`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT для таблицы `posts`

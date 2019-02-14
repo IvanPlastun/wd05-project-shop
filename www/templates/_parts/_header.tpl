@@ -24,4 +24,5 @@
     <div class="row">
         <?php include(ROOT . 'templates/_parts/_header-nav.tpl');?>
     </div>
+    <?php include(ROOT . 'templates/_parts/_cart-in-header.tpl');?>
 </header>

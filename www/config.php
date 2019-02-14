@@ -10,6 +10,8 @@
     define('SITE_NAME', 'Личный сайт - Ивана Пластун');
     define('SITE_EMAIL', 'info@webdev05.com');
     define('ADMIN_EMAIL', 'info@mail.com');
+    define('YANDEX_WALLET', '410014587407980');
+    define('YANDEX_SECRET', '0nsM3CnDuXE5Ti9DJnNfWXr6');
 
 
     //Устанавливаем путь для хоста по протоколу HTTP

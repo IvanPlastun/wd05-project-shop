@@ -8,7 +8,6 @@
     $post = R::load('posts', $_GET['id']);
     $categories = R::find('categories', 'ORDER BY category_name ASC');
 
-
     if(!empty($_POST)) {
         if(isset($_POST['delete-postImg'])) {
             
