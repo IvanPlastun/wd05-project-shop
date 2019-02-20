@@ -106,6 +106,9 @@
         case 'portfolio-edit': 
             include(ROOT . 'modules/portfolio/edit.php');
         break;
+        case 'portfolio-delete': 
+            include(ROOT . 'modules/portfolio/delete.php');
+        break;
         case 'portfolio-single-work': 
             include(ROOT . 'modules/portfolio/single.php');
         break;

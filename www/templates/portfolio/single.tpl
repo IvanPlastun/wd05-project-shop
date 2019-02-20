@@ -5,10 +5,11 @@
                     <div class="col-8 offset-1">
                         <h1 class="title-general separate-work-title--size"><?=$work['title']?></h1>
                     </div>
-                    <div class="col-2">
+                    <div class="col-3">
                         <div class="separate-work-head__button-edit">
                             <?php if(isAdmin()): ?>
-                                <a class="button button-edit" href="<?=HOST?>portfolio-edit?id=<?=$work['id']?>">Редактировать</a>
+                                <a class="button button-edit mr-20" href="<?=HOST?>portfolio-edit?id=<?=$work['id']?>">Редактировать</a>
+                                <a class="button button-delete" href="<?=HOST?>portfolio-delete?id=<?=$work['id']?>">Удалить</a>
                             <?php endif ?>
                         </div>
                     </div>

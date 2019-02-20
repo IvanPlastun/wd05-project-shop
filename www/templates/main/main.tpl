@@ -9,7 +9,10 @@
             <div class="about-me__description col-md-9">
                 <h2 class="title-1 title-1--blue title-1--weight"><?=$about['firstname']?> <?=$about['lastname']?></h2>
                 <?=$about['aboutinfo']?>
-                <div class="about-me__button"><a class="button" href="<?=HOST?>about">Подробнее</a></div>
+                <div class="about-me__button">
+                    <a class="button" href="<?=HOST?>about">Подробнее</a>
+                    <a class="button button-save" href="#!">Скачать резюме <span class="button__icon"><i class="mr-0 fas fa-cloud-download-alt"></i></span></a>
+                </div>
             </div>
         </div>
     </div>

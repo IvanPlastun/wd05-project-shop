@@ -90,6 +90,12 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.3;
 }
 
+.about-me__button {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
 .workflow-block {
     margin-bottom: 40px;
 }
@@ -121,6 +127,7 @@ h1, h2, h3, h4, h5, h6 {
 .separate-work-header-bg {
     padding-top: 0;
     padding-top: 80px;
+    padding-bottom: 120px;
 }
 
 .separate-work-description p:nth-last-child(-n+3) {
@@ -132,6 +139,11 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 24px;
     margin-bottom: 20px;
     margin-top: 20px !important;
+}
+
+.separate-work-head__button-edit {
+    display: flex;
+    justify-content: space-between;
 }
 
 .separate-work-result p:last-child {
@@ -150,8 +162,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .separate-work-technologies ul li {
-    line-height: 1;
-    margin-bottom: 1.25em;
+    line-height: 1.5;
+    margin-bottom: 0.25em;
 }
 
 .separate-work-technologies ul li::before { 

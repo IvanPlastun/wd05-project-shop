@@ -44,11 +44,6 @@
                 $errors[] = ['title' => 'Напишите краткое содержание о проекте'];
             }
 
-            if(trim($_POST['result']) == '') {
-                $errors[] = ['title' => 'Напишите кратко о достигнутом результате'];
-            }
-
-
             if(empty($errors)) {
                 $work->author_id = $_SESSION['logged_user']['id'];
                 $work->title = htmlentities($_POST['title']);

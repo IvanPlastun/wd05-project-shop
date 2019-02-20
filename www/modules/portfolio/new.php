@@ -16,10 +16,6 @@
                 $errors[] = ['title' => 'Напишите краткое содержание о проекте'];
             }
 
-            if(trim($_POST['result']) == '') {
-                $errors[] = ['title' => 'Напишите кратко о достигнутом результате'];
-            }
-
             if(empty($errors)) {
                 $portfolio = R::dispense('portfolio');
                 $portfolio->author_id = $_SESSION['logged_user']['id'];

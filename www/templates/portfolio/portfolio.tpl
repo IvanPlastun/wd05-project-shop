@@ -9,6 +9,7 @@
             <?php endif ?>
         </div>
     </div>
+    <?php include(ROOT . 'templates/portfolio/_result.tpl'); ?>
     <div class="row ml-0 mr-0">
         <?php foreach($works as $work) { ?>
             <div class="col-auto pl-0 pr-0 work-box">
@@ -17,6 +18,6 @@
         <?php } ?>
     </div>
     <div class="row ml-0 mr-0">
-        <?php ($pagination['number_of_pages'] > 1) ? include(ROOT . 'templates/_parts/_pagination.tpl') : '';?>
+        <?php ($pagination['number_of_pages'] > 1) ? include(ROOT . 'templates/_parts/_pagination-portfolio.tpl') : '';?>
     </div>
 </div>
