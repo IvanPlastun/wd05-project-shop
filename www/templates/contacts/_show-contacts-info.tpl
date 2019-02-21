@@ -23,9 +23,6 @@
 <?php } ?>
 <?php $socialNetworks = array('vkontakte', 'facebook', 'twitter');?>
 
-
-
-
 <?php function showSocialNetworks($nameParameter) { 
     global $contacts;
     ?>

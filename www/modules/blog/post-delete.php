@@ -24,6 +24,7 @@
             }
 
             R::trash($post);
+            R::exec('DELETE FROM `comments` WHERE `post_id` = :id', array(':id' => $_GET['id']));
             header('Location: ' . HOST . 'blog?result=postDeleted');
             exit();
         }
