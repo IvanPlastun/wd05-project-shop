@@ -7,6 +7,17 @@
     $success = array();
     session_start();
 
+    ///Проверяем токен для запомнить меня
+    if(isset($_COOKIE['password_cookie_token']) && !empty($_COOKIE['password_cookie_token'])) {
+        $user = R::findOne('users', 'password_cookie_token=?', array($_COOKIE['password_cookie_token']));
+        if($user) {
+            $_SESSION['logged_user'] = $user;
+            $_SESSION['login'] = 1;
+            $_SESSION['role'] = $user->role;
+        }
+    }
+
+
     /* ************************************************************
 
     * РОУТЕР

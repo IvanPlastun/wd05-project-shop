@@ -11,7 +11,7 @@
                 <?=$about['aboutinfo']?>
                 <div class="about-me__button">
                     <a class="button" href="<?=HOST?>about">Подробнее</a>
-                    <a class="button button-save" href="#!">Скачать резюме <span class="button__icon"><i class="mr-0 fas fa-cloud-download-alt"></i></span></a>
+                    <a class="button button-save" href="https://yadi.sk/i/10gM_6EAjlUTow" target="_blank">Скачать резюме <span class="button__icon"><i class="mr-0 fas fa-cloud-download-alt"></i></span></a>
                 </div>
             </div>
         </div>

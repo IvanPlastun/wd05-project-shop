@@ -61,8 +61,21 @@
                     $messages->message_file = $db_file_name;
                 }
                 if(empty($errors)) {
-                    R::store($messages);
-                    $success[] = ['title' => 'Сообщение было успешно отправлено!'];
+                    if(!empty($_POST) && isset($_POST['recaptcha_response'])) {
+                        $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
+                        $recaptcha_response = $_POST['recaptcha_response'];
+
+                        $recaptcha = file_get_contents($recaptcha_url . '?secret=' . RECAPTCHA_SECRET_KEY . '&response=' . $recaptcha_response);
+                        $recaptcha = json_decode($recaptcha);
+                        if(isset($recaptcha->score)) { 
+                            if($recaptcha->score >= 0.8) {
+                                R::store($messages);
+                                $success[] = ['title' => 'Сообщение было успешно отправлено!'];
+                            }
+                        }
+                    } else {
+                        $errors[] = ['title' => 'Что-то пошло не так. Попробуйте снова.'];
+                    }
                 }
             }
         }

@@ -44,6 +44,7 @@
                     <label class="input-file-mark input-file-mark--rounded" for="upload-file">Выбрать файл</label><span>Файл не выбран</span>
                 </section>
                 <input class="button button-save mt-20" type="submit" name="sendMessage" value="Отправить" />
+                <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
             </form>
         </div>
     </div>

@@ -5,7 +5,7 @@
     <input class="input mb-25" name="password" id="input-password" type="password" placeholder="Пароль"/>
     <div class="autorization-content-form-help mb-30">
         <label class="form__label-checkbox">
-            <input class="form__input-checkbox" type="checkbox" checked="checked" />
+            <input class="form__input-checkbox" name="remember_me" type="checkbox" checked="checked" />
             <span class="form__checkbox"></span>Запомнить меня
         </label>
         <a class="link" href="<?=HOST?>lost-password">Забыл пароль</a>

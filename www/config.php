@@ -13,7 +13,6 @@
     define('YANDEX_WALLET', '410014587407980');
     define('YANDEX_SECRET', '0nsM3CnDuXE5Ti9DJnNfWXr6');
 
-
     //Устанавливаем путь для хоста по протоколу HTTP
     define("HOST", "http://{$_SERVER['HTTP_HOST']}/");
 

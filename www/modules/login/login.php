@@ -25,6 +25,21 @@
                         $_SESSION['login'] = 1;
                         $_SESSION['role'] = $user->role;
 
+                        //Генерация и сохранения токета
+                        if(isset($_POST['remember_me'])) {
+                            $password_cookie_token = md5($user->id . $user->password . time());
+                            //Добавляет токен в БД
+                            $user->password_cookie_token = $password_cookie_token;
+                            $result = R::store($user);
+
+                            setcookie('password_cookie_token', $password_cookie_token, time() + (1000 * 60 * 60 * 24 * 30));
+                        } else {
+                            $user->password_cookie_token = NULL;
+                            R::store($user);
+                            setcookie('password_cookie_token', $user['password_cookie_token'], time() - 3600);
+                        }
+
+
                         //Сравнение и обновление корзины вынесено в отдельный файл
                         require(ROOT . 'modules/cart/_cart-update-in-login.php');
 

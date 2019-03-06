@@ -21,4 +21,13 @@
 	<link rel="stylesheet" href="<?=HOST?>templates/assets/css/custom.css" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans:400,600,700&amp;amp;subset=cyrillic-ext" />
 	<!--[if lt IE 9]><script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
+	<script src="https://www.google.com/recaptcha/api.js?render=<?=RECAPCHA_SITE_KEY?>"></script>
+	<script>
+        grecaptcha.ready(function () {
+            grecaptcha.execute('6LcMlZUUAAAAAApZwgGdzft4DTkiN7Db_MAo8b3x', { action: 'contact' }).then(function (token) {
+                var recaptchaResponse = document.getElementById('recaptchaResponse');
+                recaptchaResponse.value = token;
+            });
+        });
+    </script>
 </head>
